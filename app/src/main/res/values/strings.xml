@@ -1,0 +1,249 @@
+<resources>
+    <string name="app_name">MediAssist</string>
+
+    <string-array name="Medicine">
+        <item>Abacavir</item>
+        <item>Acyclovir</item>
+        <item>Alemtuzumab</item>
+        <item>Alendronate</item>
+        <item>Amifostine</item>
+        <item>Amikacin</item>
+        <item>Aminocaproic Acid</item>
+        <item>Amitriptyline</item>
+        <item>Amlodipine</item>
+        <item>Amoxicillin</item>
+        <item>Amphotericin B</item>
+        <item>Ampicillin</item>
+        <item>Anti-Inhibitor Coagulant Complex</item>
+        <item>Anti-thymocyte globulin</item>
+        <item>Aprepitant</item>
+        <item>Asparaginase</item>
+        <item>Atazanavir </item>
+        <item>Atenolol</item>
+        <item>Atovaquone</item>
+        <item>Azithromycin</item>
+        <item>Baclofen</item>
+        <item>Bleomycin</item>
+        <item>Bortezomib</item>
+        <item>Bosentan</item>
+        <item>Busulfan</item>
+        <item>Calcium</item>
+        <item>Captopril</item>
+        <item>Carbamazepine</item>
+        <item>Carboplatin</item>
+        <item>Carmustine</item>
+        <item>Cefaclor</item>
+        <item>Cefepime</item>
+        <item>Cefixime</item>
+        <item>Ceftazidime</item>
+        <item>Cefuroxime</item>
+        <item>Celecoxib</item>
+        <item>Cephalexin</item>
+        <item>Cidofovir</item>
+        <item>Cisplatin</item>
+        <item>Cladribine</item>
+        <item>Clarithromycin</item>
+        <item>Clindamycin</item>
+        <item>Clobazam</item>
+        <item>Clofarabine</item>
+        <item>Codeine</item>
+        <item>Crizanlizumab</item>
+        <item>Crizotinib</item>
+        <item>Cyclobenzaprine</item>
+        <item>Cyclophosphamide</item>
+        <item>Cyclosporine</item>
+        <item>Cyproheptadine</item>
+        <item>Cytarabine</item>
+        <item>Dacarbazine</item>
+        <item>Dactinomycin</item>
+        <item>Dapsone</item>
+        <item>Darunavir </item>
+        <item>Dasatinib</item>
+        <item>Daunorubicin</item>
+        <item>Deferasirox </item>
+        <item>Desmopressin </item>
+        <item>Dexamethasone</item>
+        <item>Diclofenac</item>
+        <item>Didanosine</item>
+        <item>Dinutuximab</item>
+        <item>Dobutamine</item>
+        <item>Dopamine</item>
+        <item>Dornase alfa</item>
+        <item>Doxorubicin</item>
+        <item>Dronabinol</item>
+        <item>Efavirenz</item>
+        <item>Eltrombopag</item>
+        <item>Emicizumab</item>
+        <item>Emtricitabine </item>
+        <item>Enalapril</item>
+        <item>Enoxaparin</item>
+        <item>Erlotinib</item>
+        <item>Erythromycin</item>
+        <item>Erythropoietin</item>
+        <item>Etonogestrel </item>
+        <item>Etoposide</item>
+        <item>Etravirine </item>
+        <item>Factor IX complex</item>
+        <item>Factor IX concentrate</item>
+        <item>Factor VIIa (Recombinant)</item>
+        <item>Factor VIII (Human)</item>
+        <item>Factor VIII (Recombinant)</item>
+        <item>Famciclovir</item>
+        <item>Fidaxomicin</item>
+        <item>Fidaxomicin</item>
+        <item>Fludarabine</item>
+        <item>Fluorouracil</item>
+        <item>Foscarnet</item>
+        <item>Furosemide</item>
+        <item>G-CSF (Filgrastim)</item>
+        <item>Gabapentin</item>
+        <item>Ganciclovir</item>
+        <item>Gefitinib</item>
+        <item>Gemcitabine</item>
+        <item>Gemtuzumab ozogamicin</item>
+        <item>GM-CSF</item>
+        <item>Granisetron</item>
+        <item>Heparin Lock Flush</item>
+        <item>Hydralazine</item>
+        <item>Hydrocodone </item>
+        <item>Hydrocortisone</item>
+        <item>Hydromorphone</item>
+        <item>Hydroxyurea</item>
+        <item>Ifosfamide</item>
+        <item>Imatinib</item>
+        <item>Imipenem </item>
+        <item>Immune globulin</item>
+        <item>Irinotecan</item>
+        <item>Isotretinoin</item>
+        <item>Itraconazole</item>
+        <item>Ketoconazole</item>
+        <item>L-glutamine</item>
+        <item>Labetalol</item>
+        <item>Lamivudine</item>
+        <item>Levothyroxine</item>
+        <item>Linezolid</item>
+        <item>Lomustine</item>
+        <item>Lorazepam</item>
+        <item>Magnesium</item>
+        <item>Maraviroc </item>
+        <item>Mechlorethamine</item>
+        <item>Meloxicam</item>
+        <item>Melphalan</item>
+        <item>Meperidine</item>
+        <item>Mercaptopurine</item>
+        <item>Meropenem</item>
+        <item>Mesna</item>
+        <item>Methadone</item>
+        <item>Methotrexate</item>
+        <item>Methylphenidate</item>
+        <item>Metronidazole</item>
+        <item>Micafungin</item>
+        <item>Mitotane</item>
+        <item>Mitoxantrone</item>
+        <item>Modafinil</item>
+        <item>Morphine</item>
+        <item>Muromonab – CD3</item>
+        <item>Mycophenolate mofetil</item>
+        <item>Nelarabine</item>
+        <item>Nelfinavir</item>
+        <item>Neuromuscular blockers</item>
+        <item>Nevirapine</item>
+        <item>Norepinephrine</item>
+        <item>Omeprazole</item>
+        <item>Ondansetron</item>
+        <item>Oxycodone</item>
+        <item>Paclitaxel</item>
+        <item>PEGaspargase</item>
+        <item>Pegfilgrastim</item>
+        <item>Pemetrexed</item>
+        <item>Penicillin VK</item>
+        <item>Pentamidine </item>
+        <item>Phenobarbital</item>
+        <item>Phenytoin</item>
+        <item>Phosphorus</item>
+        <item>Posaconazole</item>
+        <item>Potassium</item>
+        <item>Prednisone</item>
+        <item>Probenecid</item>
+        <item>Procarbazine</item>
+        <item>Promethazine</item>
+        <item>Promethazine topical gel</item>
+        <item>Propoxyphene</item>
+        <item>Raltegravir </item>
+        <item>Ranitidine</item>
+        <item>Rasburicase</item>
+        <item>Rilpivirine </item>
+        <item>Rituximab</item>
+        <item>Rivaroxaban</item>
+        <item>Ruxolitinib</item>
+        <item>Saquinavir</item>
+        <item>Sirolimus</item>
+        <item>Sorafenib</item>
+        <item>Stavudine</item>
+        <item>Sucralfate</item>
+        <item>Sugammadex</item>
+        <item>Sunitinib</item>
+        <item>Tacrolimus</item>
+        <item>Temozolomide</item>
+        <item>Teniposide</item>
+        <item>Tenofovir</item>
+        <item>Thioguanine</item>
+        <item>Thiotepa</item>
+        <item>Tobramycin</item>
+        <item>Topotecan</item>
+        <item>Valproic acid</item>
+        <item>Vancomycin</item>
+        <item>Vinblastine</item>
+        <item>Vincristine</item>
+        <item>Voriconazole</item>
+        <item>Vorinostat</item>
+        <item>Voxelotor</item>
+        <item>Warfarin</item>
+        <item>Zidovudine</item>
+    </string-array>
+
+    <string-array name="time">
+        <item>1-1-1</item>
+        <item>1-0-0</item>
+        <item>0-1-0</item>
+        <item>0-0-1</item>
+        <item>1-0-1</item>
+    </string-array>
+    <string-array name="DMW">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+    </string-array>
+    <string-array name="day">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+</resources>

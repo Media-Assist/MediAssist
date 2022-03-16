@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Doctor_Registration"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    android:layout_margin="20dp"
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor Registration"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:layout_margin="20dp"
+        android:gravity="center"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_FirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Amit"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_LastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Shah"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="amitshah@xzy.com"
+        android:inputType="textEmailAddress"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile No"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_MobileNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="9922457834"
+        android:inputType="number"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_DateOfBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="28-08-2000"
+        android:inputType="number"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specialization"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Specialization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MBBS"
+        android:layout_margin="20dp"></EditText>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Master's"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medical Council Registarion No"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_MCR_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Master's"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clinic Name"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Clinic_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Master's"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Experience in No of Year"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Experience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="2"
+        android:inputType="number"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Address"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="25, Street near Apploto Hospital"
+        android:inputType="textMultiLine"
+        android:minLines="10"
+        android:gravity="start"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ahemdabad"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_State"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Gujarat"
+        android:layout_margin="20dp"></EditText>
+
+
+    <RadioGroup
+        android:id="@+id/DR_D_Gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <RadioButton
+            android:id="@+id/Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+        <RadioButton
+            android:id="@+id/Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:checked="true"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Use A-Z a-z 0-9 @#$"
+        android:layout_margin="20dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Password"
+        android:layout_marginTop="39dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <EditText
+        android:id="@+id/DR_Confirm_Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Use A-Z a-z 0-9 @#$"
+        android:layout_margin="20dp"></EditText>
+
+    <Button
+        android:id="@+id/DR_Register_Doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:onClick="DR_Register_Doctor"
+        android:background="@color/btncolor"></Button>
+
+    <Button
+        android:id="@+id/DR_BackToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:onClick="DR_BackToLogin"
+        android:background="@color/btncolor"></Button>
+
+
+</LinearLayout>
+</ScrollView>

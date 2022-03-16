@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/button_style.xml" value="0.1525" />
+        <entry key="app/src/main/res/drawable/textbox.xml" value="0.1525" />
+        <entry key="app/src/main/res/layout/activity_create_prescription.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_create_sicknote.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_detail_invoice.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_detail_prescription.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_detail_sicknote.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_doctor_basic_info.xml" value="0.15353260869565216" />
+        <entry key="app/src/main/res/layout/activity_doctor_login.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_doctor_login_to_home_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_doctor_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_doctor_registration.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_doctor_videocall.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login_option.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_patient_login_to_home_page.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_patient_menu.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_patient_registration.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_patient_video_call.xml" value="0.15353260869565216" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_view_invoice.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_view_prescription.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/activity_view_sicknote.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1525" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mediassist">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/patient"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MediAssist">
+        <activity
+            android:name=".Doctor_basic_Info"
+            android:exported="false" />
+        <activity
+            android:name=".Patient_VideoCall"
+            android:exported="false" />
+        <activity
+            android:name=".Splash_Screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Doctor_Login_to_HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".Patient_Login_to_HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor_Videocall"
+            android:exported="false" />
+        <activity
+            android:name=".Patient_Login"
+            android:exported="false" />
+        <activity
+            android:name=".Patient_Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor_Login"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor_Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Login_option"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Patient_menu"
+            android:exported="true" />
+        <activity
+            android:name=".Doctor_menu"
+            android:exported="true" />
+        <activity
+            android:name=".Detail_Sicknote"
+            android:exported="false" />
+        <activity
+            android:name=".View_Sicknote"
+            android:exported="true" />
+        <activity
+            android:name=".Detail_Invoice"
+            android:exported="false" />
+        <activity
+            android:name=".View_Invoice"
+            android:exported="true" />
+        <activity
+            android:name=".Detail_Prescription"
+            android:exported="false" />
+        <activity
+            android:name=".View_Prescription"
+            android:exported="true" />
+        <activity
+            android:name=".Create_Sicknote"
+            android:exported="true" />
+        <activity
+            android:name=".Create_Invoice"
+            android:exported="true" />
+        <activity
+            android:name=".Create_Prescription"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

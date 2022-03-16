@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Create_Invoice"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Create Invoice"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Sr No"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/CI_SRNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="For Ex. 6385"
+            android:layout_margin="20dp"
+            android:inputType="number"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter  Hospital Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/CI_HospitalName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="For Ex. Vedanta "></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER Date"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/CI_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  For Ex. 21012020(DDMMYY)"
+            android:layout_marginTop="10dp"
+            android:layout_margin="20dp"
+            android:inputType="date"/>
+
+        <!--suppress AndroidUnresolvableTag -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Doctor ID"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/CI_DID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="For Ex. 96385 "
+            android:layout_margin="20dp"
+            android:inputType="number"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Doctor Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/CI_DName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="For Ex. Dr.Bill Gates "></EditText>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER PATIENT ID:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/CI_PDI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  For Ex. 102030"
+            android:inputType="number"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER PATIENT NAME:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/CI_PName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  For Ex.  Bill Gates"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp">
+        </EditText>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER PHONE NUMBER:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/CI_PNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="For Ex.  9090909090"
+            android:layout_marginTop="10dp"
+            android:layout_margin="20dp"
+            android:inputType="number">
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER PARTICULARS:"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/CI_Particulars"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_margin="20dp"
+            android:hint="Covid test"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTER AMOUNT:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/CI_Amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  For Ex.  1000"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_margin="20dp"/>
+        <Button
+            android:id="@+id/CI_ADDInvoice_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Add To Invoice"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/btncolor"
+            android:layout_margin="20dp"></Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List of Particulars"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"></TextView>
+
+        <TextView
+            android:id="@+id/CI_List_OF_Particulars_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Covid test - 1000/-"
+            android:layout_margin="20dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"></TextView>
+        <TextView
+            android:id="@+id/CI_Total_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000/-"
+            android:layout_margin="20dp"
+            ></TextView>
+        <Button
+            android:id="@+id/CI_CreateInvoice_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="40dp"
+            android:textSize="30dp"
+            android:backgroundTint="@color/btncolor"
+            android:text="Create Invoice"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</ScrollView>

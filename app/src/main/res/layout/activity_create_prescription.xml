@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Create_Prescription"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Prescription"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            ></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_Date"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Date (DD/MM/YYYY)"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doctor ID"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_Did"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="demo@gmail.com"
+                android:inputType="textEmailAddress"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doctor Name"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_DName"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex. Harry"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient ID"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_PID"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="demo@gmail.com"
+                android:inputType="textEmailAddress"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient Name"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_PName"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex. Lord Voldemort"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient Age"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/Cp_P_age"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" Ex. 40"
+                android:inputType="number"
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diagnosis"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_Diagnosis"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex. Fever"
+                android:inputType="textMultiLine"
+                android:minLines="10"
+                android:gravity="start"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Symptoms"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <TextView
+                android:id="@+id/Cp_txt_Symtoms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fever"
+                android:layout_margin="20dp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Medicinces"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+
+            <Spinner
+                android:id="@+id/CP_medicinces_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/Medicine"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/CP_ET_medicinces"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="If no Medicine In List Enter Here"></EditText>
+
+            <RadioGroup
+                android:id="@+id/Cp_Meal_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <RadioButton
+                    android:id="@+id/Before"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Before Meal"/>
+                <RadioButton
+                    android:id="@+id/after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="After Meal"
+                    android:checked="true"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"></TextView>
+            <Spinner
+                android:id="@+id/CP_time_Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/time"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Days"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/CP_Day_ET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:inputType="number"
+                    android:hint="Enter Day,Month,Week"></EditText>
+                <Spinner
+                    android:id="@+id/CP_Day_Spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/DMW"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/CP_ADDMedicine_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Add Medicine"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/btncolor"
+                android:layout_gravity="center"
+                ></Button>
+            <TextView
+                android:id="@+id/CP_List_Of_Medicines_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Dolo 650 "></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doctor Note"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"></TextView>
+            <EditText
+                android:id="@+id/CP_DoctorNote"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex. Precautions \nTest Report"
+                android:inputType="textMultiLine"
+                android:minLines="10"
+                android:gravity="start"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/CP_Submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Prescription"
+                android:layout_gravity="center"
+                android:layout_margin="40dp"
+                android:textSize="30dp"
+                android:backgroundTint="@color/btncolor"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                ></Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
