@@ -275,6 +275,34 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"></Button>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Select Pharmacy from Dropdown menu"></TextView>
+        <Spinner
+            android:id="@+id/DP_Spinner"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:autofillHints="Select"
+            android:layout_height="wrap_content"></Spinner>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/btncolor"
+            android:onClick="ShareWithPharmacy"
+            android:text="Share Prescription\n With \nPharmacy "
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginBottom="70dp"
+            android:textStyle="bold"></Button>
     </LinearLayout>
 
 </ScrollView>

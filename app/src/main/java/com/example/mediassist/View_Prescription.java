@@ -116,6 +116,7 @@ public class View_Prescription extends AppCompatActivity {
 
                         Intent intent = new Intent(getApplicationContext(), Detail_Prescription.class);
                         intent.putExtra("Username", VP_full_details);
+                        intent.putExtra("PatientMail",VP_Name.getText().toString());
                         startActivity(intent);
 
 

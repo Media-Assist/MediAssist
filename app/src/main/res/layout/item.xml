@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date : "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/Pharma_VP_RV_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22-02-22"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_Doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bill"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient ID : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="abc@xyz.com"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient Name : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elon"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient No. : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9876543212"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xyz Street"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_City"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABC"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_State"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gujarat"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicinces : "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Pharma_VP_RV_P_Medicinces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dolo"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"></TextView>
+    </LinearLayout>
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

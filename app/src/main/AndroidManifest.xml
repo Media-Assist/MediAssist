@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAssist">
         <activity
+            android:name=".Pharmacy_View_Prescription"
+            android:exported="false" />
+        <activity
+            android:name=".Pharmacy_menu"
+            android:exported="false" />
+        <activity
+            android:name=".Pharmacy_Login"
+            android:exported="false" />
+        <activity
+            android:name=".Pharmacy_Registration"
+            android:exported="false" />
+        <activity
             android:name=".Doctor_basic_Info"
             android:exported="false" />
         <activity
@@ -51,7 +63,7 @@
             android:exported="false" />
         <activity
             android:name=".Login_option"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Patient_menu"
             android:exported="true" />
@@ -75,7 +87,7 @@
             android:exported="false" />
         <activity
             android:name=".View_Prescription"
-            android:exported="true" />
+            android:exported="true"></activity>
         <activity
             android:name=".Create_Sicknote"
             android:exported="true" />

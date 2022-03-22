@@ -23,4 +23,9 @@ public class Login_option extends AppCompatActivity {
         Intent send = new Intent(Login_option.this, Patient_Login.class);
         startActivity(send);
     }
+
+    public void PharmacyLogin(View view) {
+        Intent send = new Intent(Login_option.this, Pharmacy_Login.class);
+        startActivity(send);
+    }
 }

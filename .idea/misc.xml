@@ -23,10 +23,15 @@
         <entry key="app/src/main/res/layout/activity_patient_menu.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_patient_registration.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_patient_video_call.xml" value="0.15353260869565216" />
+        <entry key="app/src/main/res/layout/activity_pharmacy_login.xml" value="0.15353260869565216" />
+        <entry key="app/src/main/res/layout/activity_pharmacy_menu.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_pharmacy_registration.xml" value="0.129981884057971" />
+        <entry key="app/src/main/res/layout/activity_pharmacy_view_prescription.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_view_invoice.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_view_prescription.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_view_sicknote.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1525" />
       </map>
     </option>
@@ -36,5 +41,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.15217391304347827" />
+      </ProjectState>
+    </option>
   </component>
 </project>

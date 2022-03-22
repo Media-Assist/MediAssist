@@ -1,6 +1,5 @@
 package com.example.mediassist;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,44 +20,44 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class Doctor_Login extends AppCompatActivity {
-    EditText DL_Email,DL_Password;
+public class Pharmacy_Login extends AppCompatActivity {
+EditText Pharma_L_Email,Pharma_L_Password;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String Doctor_mail_detail="";
-    String email,password;
+    String email,password;;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_login);
+        setContentView(R.layout.activity_pharmacy_login);
 
-        DL_Email=findViewById(R.id.DL_Email);
-        DL_Password=findViewById(R.id.DL_Password);
+        Pharma_L_Email=findViewById(R.id.Pharma_L_Email);
+        Pharma_L_Password=findViewById(R.id.Pharma_L_Password);
 
         firebaseAuth=FirebaseAuth.getInstance();
 
-
-    }
-    public void DL_Login(View view) {
-
-        if (TextUtils.isEmpty(DL_Email.getText().toString())) {
-            DL_Email.setError("Required");
-            return;
-        }
-        if (TextUtils.isEmpty(DL_Password.getText().toString())) {
-            DL_Password.setError("Required");
-            return;
-        }
-        doctorLogin();
-
     }
 
-    private void doctorLogin() {
-        email=DL_Email.getText().toString();
-        password=DL_Password.getText().toString();
+    public void PH_Login(View view) {
+
+        if (TextUtils.isEmpty(Pharma_L_Email.getText().toString())) {
+            Pharma_L_Email.setError("Required");
+            return;
+        }
+        if (TextUtils.isEmpty(Pharma_L_Password.getText().toString())) {
+            Pharma_L_Password.setError("Required");
+            return;
+        }
+        PharmacyLogin();
+    }
+
+    private void PharmacyLogin() {
+
+        email=Pharma_L_Email.getText().toString();
+        password=Pharma_L_Password.getText().toString();
 
 
-        DocumentReference documentReference = db.collection("Doctors").document(email);
+        DocumentReference documentReference = db.collection("Pharmacys").document(email);
 
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -84,13 +83,13 @@ public class Doctor_Login extends AppCompatActivity {
                 if(task.isSuccessful()){
                     //check doctor details in firebase firestore
                     if (Doctor_mail_detail.equals(email)){
-                       // Toast.makeText(getApplicationContext(),Doctor_mail_detail+"data from firestore", Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(getApplicationContext(),Doctor_mail_detail+"data from firestore", Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(),"Doctor Login Successfully", Toast.LENGTH_SHORT).show();
-                        DL_Email.setText("");
-                        DL_Password.setText("");
+                        Pharma_L_Email.setText("");
+                        Pharma_L_Password.setText("");
 
-                        Intent send = new Intent(Doctor_Login.this, Doctor_Login_to_HomePage.class);
-                        send.putExtra("DoctorEmail",email);
+                        Intent send = new Intent(Pharmacy_Login.this, Pharmacy_menu.class);
+                        send.putExtra("PharmaEmail",email);
                         startActivity(send);
                         finish();
 
@@ -98,8 +97,8 @@ public class Doctor_Login extends AppCompatActivity {
 
 
                     }else {
-                        DL_Email.setError("Invalid Detail");
-                        DL_Email.requestFocus();
+                        Pharma_L_Email.setError("Invalid Detail");
+                        Pharma_L_Email.requestFocus();
                     }
 
 
@@ -109,17 +108,14 @@ public class Doctor_Login extends AppCompatActivity {
             }
         });
 
+
     }
 
-    public void DR_CreateAccoount(View view) {
-        Intent send = new Intent(Doctor_Login.this, Doctor_Registration.class);
+    public void PH_CreateAccoount(View view) {
+        Intent send = new Intent(Pharmacy_Login.this, Pharmacy_Registration.class);
         startActivity(send);
     }
 
-    public void gotoPatient_Login(View view) {
-        Intent send = new Intent(Doctor_Login.this, Patient_Login.class);
-        startActivity(send);
-    }
 
 
 }

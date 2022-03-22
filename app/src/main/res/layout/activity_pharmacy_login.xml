@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pharmacy_Login"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="60dp"
+            android:gravity="center"
+            android:text="Pharmacy Login"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="39dp"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/Pharma_L_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="abc123@xyz.com"
+            android:inputType="textEmailAddress"
+            android:layout_margin="20dp"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="39dp"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/Pharma_L_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_margin="20dp"></EditText>
+
+        <Button
+            android:id="@+id/Pharma_L_Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:onClick="PH_Login"
+            android:background="@color/btncolor"></Button>
+
+        <Button
+            android:id="@+id/Pharma_L_CreateAccoount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:onClick="PH_CreateAccoount"
+            android:background="@color/btncolor"></Button>
+
+
+    </LinearLayout>
+
+</ScrollView>

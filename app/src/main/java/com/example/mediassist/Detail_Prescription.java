@@ -46,6 +46,7 @@ public class Detail_Prescription extends AppCompatActivity {
     Bitmap btm,btm1;
     String FBFS_FirstName,FBFS_LastName,FBFS_Mobile_No,FBFS_Specialization,FBFS_Education,FBFS_MCR_No,FBFS_Clinic_Name,FBFS_Address,FBFS_City,FBFS_State;
     String time;
+    String data1,data2,data3,data4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +55,8 @@ public class Detail_Prescription extends AppCompatActivity {
 
         time = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
 
-        btm= BitmapFactory.decodeResource(getResources(),R.drawable.prescription);
-        btm1= Bitmap.createScaledBitmap(btm,50,50,false );
+        btm= BitmapFactory.decodeResource(getResources(), R.drawable.redcross3);
+        btm1= Bitmap.createScaledBitmap(btm,100,100,false );
 
         DP_Date_txt=findViewById(R.id.DP_Date_txt);
 
@@ -122,13 +123,13 @@ public class Detail_Prescription extends AppCompatActivity {
 
 
                             DP_D_Clinic.setText(FBFS_Clinic_Name);
-                            String data1="Dr. "+FBFS_FirstName+" "+FBFS_LastName+", ("+FBFS_Specialization+", "+FBFS_Education+")";
+                            data1="Dr. "+FBFS_FirstName+" "+FBFS_LastName+", ("+FBFS_Specialization+", "+FBFS_Education+")";
                             DP_D_data1.setText(data1);
-                            String data2="Contact No "+FBFS_Mobile_No;
+                            data2="Contact No. "+FBFS_Mobile_No;
                             DP_D_data2.setText(data2);
-                            String data3="MCR No : "+FBFS_MCR_No;
+                            data3="MCR No : "+FBFS_MCR_No;
                             DP_D_data3.setText(data3);
-                            String data4="Address : "+FBFS_Address+", City : "+FBFS_City+", "+FBFS_State;
+                            data4="Address : "+FBFS_Address+", City : "+FBFS_City+", "+FBFS_State;
                             DP_D_data4.setText(data4);
                         }
 
@@ -174,54 +175,69 @@ public class Detail_Prescription extends AppCompatActivity {
         Canvas canvas = page.getCanvas();
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawBitmap(btm1,300,5,paint);
-        paint.setTextSize(20.0f);
-        canvas.drawText(FBFS_Clinic_Name,260,73,paint);
+        canvas.drawBitmap(btm1,40,40,paint);
+        paint.setTextSize(50.0f);
+        canvas.drawText(FBFS_Clinic_Name,220,100,paint);
         paint.setTextAlign(Paint.Align.LEFT);
         paint.setTextSize(10.0f);
         paint.setColor(Color.BLACK);
-        paint.setStrokeWidth(2);
-        canvas.drawLine(0, 90, 985, 90, paint);
+        paint.setStrokeWidth(1);
+        canvas.drawLine(0, 180, 985, 180, paint);
 
-        canvas.drawText("Date : ",10,120,paint);
+        canvas.drawText(data1,220,130,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_Date, 80, 120, paint);
 
-        canvas.drawText("Doctor ID : ",10,135,paint);
+        canvas.drawText(data2,220,145,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_DoctorID, 80, 135, paint);
 
-        canvas.drawText("Doctor Name : ",10,150,paint);
+        canvas.drawText(data3,220,160,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_DoctorName, 80, 150, paint);
 
-        canvas.drawText("Patient Name : ",10,165,paint);
+        paint.setTextSize(15.0f);
+        canvas.drawText("Date :"+VP_Date,480,200,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_PatientName, 80, 165, paint);
 
-        canvas.drawText("Patient Age : ",10,180,paint);
+        canvas.drawText("Name : "+VP_PatientName,20,220,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_PatientAge, 80, 180, paint);
 
-        canvas.drawText("Diagnosis : ",10,195,paint);
+        canvas.drawText("Age : "+VP_PatientAge,20,240,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_Diagnosis, 80, 195, paint);
 
-        canvas.drawText("Symtoms : ",10,210,paint);
+        paint.setTextSize(15.0f);
+        canvas.drawText("Diagnosis : ",20,280,paint);
+        paint.setTextSize(10.0f);
+        canvas.drawText(VP_Diagnosis,20,295,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_Symtoms, 80, 210, paint);
 
-        canvas.drawText("DoctorNote : ",10,225,paint);
+        paint.setTextSize(15.0f);
+        canvas.drawText("Symtoms : ",20,335,paint);
+        paint.setTextSize(10.0f);
+        canvas.drawText(VP_Symtoms,20,350,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_DoctorNote,10,240,paint);
 
-        canvas.drawText("Medicince List : ",10,270,paint);
+        paint.setTextSize(15.0f);
+        canvas.drawText("MedicinceList : ",20,390,paint);
+        paint.setTextSize(10.0f);
+        canvas.drawText(VP_MedicinceList,20,405,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(VP_MedicinceList,10,285,paint);
+
+        paint.setTextSize(15.0f);
+        canvas.drawText("Doctor Note : ",20,445,paint);
+        paint.setTextSize(10.0f);
+        canvas.drawText(VP_DoctorNote,20,460,paint);
+        paint.setColor(Color.BLACK);
+
 
         canvas.drawText("Authentic By : ",500,930,paint);
         paint.setColor(Color.BLACK);
         canvas.drawText("Admin ",515,945,paint);
+
+        paint.setColor(Color.BLACK);
+        canvas.drawLine(0, 960, 985, 960, paint);
+
+        paint.setTextSize(15.0f);
+        canvas.drawText(data4,30,980,paint);
+
 
         //canvas.drawt
         // finish the page
