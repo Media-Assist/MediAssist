@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -38,6 +40,7 @@ public class Doctor_Registration extends AppCompatActivity {
     FirebaseFirestore db;
     String gender;
     DatePickerDialog picker;
+    DatabaseReference realtimedata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +86,7 @@ public class Doctor_Registration extends AppCompatActivity {
         firebaseUser=firebaseAuth.getCurrentUser();
         db=FirebaseFirestore.getInstance();
 
+        realtimedata = FirebaseDatabase.getInstance().getReference("AppointmentDoctor");
 
 
     }
@@ -198,6 +202,8 @@ public class Doctor_Registration extends AppCompatActivity {
 
     private void storeDoctorData() {
 
+
+
         gender = ((RadioButton)findViewById(DR_D_Gender.getCheckedRadioButtonId())).getText().toString();
         DocumentReference documentReference = db.collection("Doctors").document(DR_Email.getText().toString());
         Map<String,String> items=new HashMap<>();
@@ -219,6 +225,14 @@ public class Doctor_Registration extends AppCompatActivity {
         items.put("TypeOfUser","Doctor");
         items.put("UserCredential","True");
 
+
+        //realtime data
+        String updated_email=DR_Email.getText().toString();
+        updated_email=updated_email.replace('.',',');
+        HashMap<String, String> data = new HashMap<>();
+        data.put("Email",DR_Email.getText().toString());
+        realtimedata.child(updated_email).setValue(data);
+        //end
         documentReference.set(items).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
@@ -247,7 +261,12 @@ public class Doctor_Registration extends AppCompatActivity {
         });
 
 
+
     }
+
+
+
+
 
     public void DR_BackToLogin(View view) {
         Intent send = new Intent(Doctor_Registration.this, Doctor_Login.class);

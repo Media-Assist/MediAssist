@@ -29,7 +29,7 @@ public class Pharmacy_menu extends AppCompatActivity {
     String PharmaEmail;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String D9;
-    @Override
+       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pharmacy_menu);
@@ -41,7 +41,9 @@ public class Pharmacy_menu extends AppCompatActivity {
 
         showUsedata();
 
-       // Showdata();
+
+
+        // Showdata();
     }
 
     private void showUsedata() {
@@ -54,7 +56,6 @@ public class Pharmacy_menu extends AppCompatActivity {
                 if (documentSnapshot.exists()){
 
                     D9=documentSnapshot.getString("Pharmacy List Name");
-
                     pharma_name_mn.setText(D9);
                 }else {
                     Toast.makeText(getApplicationContext(),"Not Found", Toast.LENGTH_SHORT).show();
@@ -69,6 +70,8 @@ public class Pharmacy_menu extends AppCompatActivity {
         });
 
     }
+
+
 
 
     public void Pharma_View_Prescription(View view) {

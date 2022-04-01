@@ -20,11 +20,18 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -35,18 +42,26 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Detail_Prescription extends AppCompatActivity {
     TextView DP_Date_txt,DP_Patient_Name_txt,DP_Patient_Age_txt,DP_Diagnosis_txt,DP_Symtoms_txt,DP_MedicinceList_txt,DP_DoctorNote_txt;
     TextView DP_D_Clinic,DP_D_data1,DP_D_data2,DP_D_data3,DP_D_data4;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
-    String VP_All_P_Details,VP_Date,VP_DoctorID,VP_DoctorName,VP_PatientName,VP_PatientAge,VP_Diagnosis,VP_Symtoms,VP_MedicinceList,VP_DoctorNote;
-    String VP_Username;
+    String VP_All_P_Details,VP_Date,VP_DoctorID,VP_DoctorName,VP_PatientId,VP_PatientName,VP_PatientAge,VP_Diagnosis,VP_Symtoms,VP_MedicinceList,VP_DoctorNote;
+    String VP_Username,VP_PatientMail;
     Bitmap btm,btm1;
     String FBFS_FirstName,FBFS_LastName,FBFS_Mobile_No,FBFS_Specialization,FBFS_Education,FBFS_MCR_No,FBFS_Clinic_Name,FBFS_Address,FBFS_City,FBFS_State;
-    String time;
+    String time,time1;
+    Spinner DP_Spinner;
+    DatabaseReference spinnerRef;
+    ArrayList<String> spinnerList;
+    ArrayAdapter<String> adapter;
     String data1,data2,data3,data4;
+    String PI_Contact,PI_Adress,PI_City,PI_State;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,16 +88,73 @@ public class Detail_Prescription extends AppCompatActivity {
         DP_D_data3=findViewById(R.id.DP_D_data3);
         DP_D_data4=findViewById(R.id.DP_D_data4);
 
+        DP_Spinner=findViewById(R.id.DP_Spinner);
+
         Intent intent = getIntent();
+        VP_PatientMail= intent.getStringExtra("PatientMail");
         VP_Username = intent.getStringExtra("Username");
 
 
         getPatientInfo();
+        spinnerRef= FirebaseDatabase.getInstance().getReference("Pharmarcy_List");
+
+        spinnerList=new ArrayList<>();
+        adapter=new ArrayAdapter<String>(Detail_Prescription.this, android.R.layout.simple_spinner_dropdown_item,spinnerList);
+        DP_Spinner.setAdapter(adapter);
+        ShowPharmacyList();
+        getPatientBasicInfo();
+        //Toast.makeText(getApplicationContext(),VP_DoctorID,Toast.LENGTH_SHORT).show();
 
 
-        Toast.makeText(getApplicationContext(),VP_DoctorID,Toast.LENGTH_SHORT).show();
+    }
+
+    private void getPatientBasicInfo() {
+        //patient info start here
+
+        DocumentReference documentReference_PI = db.collection("Patient").document(VP_PatientMail);
+
+        documentReference_PI.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+
+                    PI_Contact=documentSnapshot.getString("Mobile No");
+                    PI_Adress=documentSnapshot.getString("Address");
+                    PI_City=documentSnapshot.getString("City");
+                    PI_State=documentSnapshot.getString("State");
+
+                }else {
+                    Toast.makeText(getApplicationContext(),"Not Found", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Data Not Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //end
+    }
+
+    private void ShowPharmacyList() {
 
 
+        spinnerRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot item:snapshot.getChildren()){
+                    spinnerList.add(item.getValue().toString());
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void getPatientInfo() {
@@ -101,7 +173,7 @@ public class Detail_Prescription extends AppCompatActivity {
                 VP_Symtoms=value.getString("Symtoms");
                 VP_MedicinceList=value.getString("MedicinceList");
                 VP_DoctorNote=value.getString("DoctorNote");
-
+                VP_PatientId=value.getString("PatientID");
                 //doctor info start here
 
                 DocumentReference documentReference_D = db.collection("Doctors").document(VP_DoctorID);
@@ -263,5 +335,38 @@ public class Detail_Prescription extends AppCompatActivity {
         // close the document
         document.close();
 
+    }
+
+    public void ShareWithPharmacy(View view) {
+        String value1;
+        value1=DP_Spinner.getSelectedItem().toString();
+        time1 = new SimpleDateFormat("dd-M-yyyy hh:mm:ss").format(Calendar.getInstance().getTime());
+        DocumentReference documentReference1 = db.collection(value1).document(VP_PatientId+VP_Date);
+
+        Map<String,String> items=new HashMap<>();
+        items.put("Date",VP_Date);
+        items.put("Doctor_Name",VP_DoctorName);
+        items.put("Patient_Id",VP_PatientId);
+        items.put("Patient_No",PI_Contact);
+        items.put("Patient_Name",VP_PatientName);
+        items.put("List_Of_Medicinces",VP_MedicinceList);
+        items.put("Address",PI_Adress);
+        items.put("City",PI_City);
+        items.put("State",PI_State);
+        items.put("Shate_Date_Time",time1);
+
+
+
+        documentReference1.set(items).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(getApplicationContext(),"Shared With Pharmacy",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Pharmacy Data Not Store "+e.toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

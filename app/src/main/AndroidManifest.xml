@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAssist">
         <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.MediAssist.NoActionBar"
+             />
+        <activity
+            android:name=".Doctor_Manu_toCreate_SickNote"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor_Manu_toCreate_Invoice"
+            android:exported="false" />
+        <activity
             android:name=".Pharmacy_View_Prescription"
             android:exported="false" />
         <activity
@@ -33,13 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".Splash_Screen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Doctor_Login_to_HomePage"
             android:exported="false" />
@@ -63,7 +69,13 @@
             android:exported="false" />
         <activity
             android:name=".Login_option"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Patient_menu"
             android:exported="true" />
@@ -75,7 +87,7 @@
             android:exported="false" />
         <activity
             android:name=".View_Sicknote"
-            android:exported="true" />
+            android:exported="true"></activity>
         <activity
             android:name=".Detail_Invoice"
             android:exported="false" />
@@ -87,7 +99,7 @@
             android:exported="false" />
         <activity
             android:name=".View_Prescription"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Create_Sicknote"
             android:exported="true" />
@@ -100,6 +112,30 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+
+
+
+        <activity
+            android:name=".RealtimeDB.Login2"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".RealtimeDB.BookAppointment"
+            android:exported="false" />
+
+        <activity
+            android:name=".Doctor.DoctorView"
+            android:exported="false" />
+
+        <activity
+            android:name=".Doctor.Doctor"
+            android:exported="false" />
+        <activity
+            android:name=".Specialization.Specialization"
+            android:exported="false" />
+
     </application>
 
 </manifest>

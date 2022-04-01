@@ -1,5 +1,6 @@
 package com.example.mediassist;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -32,58 +35,120 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Detail_Invoice extends AppCompatActivity {
-    TextView DIN_Username,DIN_Details;
+    TextView DIN_D_Clinic,DIN_D_data1,DIN_D_data2,DIN_D_data3,DIN_Date_txt,DIN_Patient_Name_txt,DIN_Patient_ID_txt,DIN_Particulars_txt,DIN_Total_txt,DIN_D_data4;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
-    String DINV_All_in_Details,DINV_Date,DINV_DoctorID,DINV_DoctorName,DINV_HospitalName,DINV_Invoice_Particulars_Details,DINV_MobileNo,DINV_PatientID,DINV_PatientName,DINV_SR_No,DINV_Total;
-    String DINV_Username="";
+    String DINV_Date,DINV_DoctorID,DINV_DoctorName,DINV_HospitalName,DINV_Invoice_Particulars_Details,DINV_PatientID,DINV_PatientName,DINV_Total;
+    String DINV_Username="",Username_VIN,PatientMail_VIN;
     Bitmap btm,btm1;
+    String FBFS_FirstName,FBFS_LastName,FBFS_Mobile_No,FBFS_Specialization,FBFS_Education,FBFS_MCR_No,FBFS_Clinic_Name,FBFS_Address,FBFS_City,FBFS_State;
     String time;
+    String data1,data2,data3,data4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_invoice);
 
+        Intent intent = getIntent();
+        PatientMail_VIN= intent.getStringExtra("PatientMail_VIN");
+        Username_VIN = intent.getStringExtra("Username_VIN");
+
+
         time = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
 
-        btm= BitmapFactory.decodeResource(getResources(), R.drawable.invoice1);
-        btm1= Bitmap.createScaledBitmap(btm,50,50,false );
+        btm= BitmapFactory.decodeResource(getResources(), R.drawable.redcross3);
+        btm1= Bitmap.createScaledBitmap(btm,100,100,false );
 
-        DIN_Username=findViewById(R.id.DIN_Username);
-        DIN_Details=findViewById(R.id.DIN_Details);
 
-        Intent intent = getIntent();
-        DINV_Username = intent.getStringExtra("Invoice_Username");
+        DIN_D_Clinic=findViewById(R.id.DIN_D_Clinic);
+        DIN_D_data1=findViewById(R.id.DIN_D_data1);
+        DIN_D_data2=findViewById(R.id.DIN_D_data2);
+        DIN_D_data3=findViewById(R.id.DIN_D_data3);
+        DIN_Date_txt=findViewById(R.id.DIN_Date_txt);
+        DIN_Patient_Name_txt=findViewById(R.id.DIN_Patient_Name_txt);
+        DIN_Patient_ID_txt=findViewById(R.id.DIN_Patient_ID_txt);
+        DIN_Particulars_txt=findViewById(R.id.DIN_Particulars_txt);
+        DIN_Total_txt=findViewById(R.id.DIN_Total_txt);
+        DIN_D_data4=findViewById(R.id.DIN_D_data4);
 
-        DocumentReference documentReference = db.collection("Invoice").document(DINV_Username);
+        getPatientInfo();
+    }
+
+    private void getPatientInfo() {
+        //firebase part
+        DocumentReference documentReference = db.collection("Invoice").document(Username_VIN);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 DINV_Date=value.getString("Date");
                 DINV_DoctorID=value.getString("DoctorID");
                 DINV_DoctorName=value.getString("DoctorName");
-                DINV_HospitalName=value.getString("HospitalName");
-                DINV_Invoice_Particulars_Details=value.getString("Invoice_Particulars_Details");
-                DINV_MobileNo=value.getString("MobileNo");
                 DINV_PatientID=value.getString("PatientID");
                 DINV_PatientName=value.getString("PatientName");
-                DINV_SR_No=value.getString("SR_No");
+                DINV_HospitalName=value.getString("HospitalName");
+                DINV_Invoice_Particulars_Details=value.getString("Invoice_Particulars_Details");
+                DINV_Total=value.getString("Total");
 
-                DINV_All_in_Details=DINV_SR_No+"\n"+DINV_HospitalName+"\n"+DINV_Date+"\n"+DINV_DoctorID+"\n"+DINV_DoctorName+"\n"+DINV_MobileNo+"\n"+DINV_PatientID+"\n"+DINV_PatientName+"\n"+DINV_Invoice_Particulars_Details+"\n"+DINV_Total;
 
-                InvoiceDetails();
+                DIN_D_Clinic.setText(DINV_HospitalName);
+                DIN_Date_txt.setText(DINV_Date);
+                DIN_Patient_Name_txt.setText(DINV_PatientName);
+                DIN_Patient_ID_txt.setText(DINV_PatientID);
+                DIN_Particulars_txt.setText(DINV_Invoice_Particulars_Details);
+                DIN_Total_txt.setText(DINV_Total);
 
+                //doctor info start here
+
+                DocumentReference documentReference_D = db.collection("Doctors").document(DINV_DoctorID);
+
+                documentReference_D.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            FBFS_FirstName=documentSnapshot.getString("FirstName");
+                            FBFS_LastName=documentSnapshot.getString("LastName");
+                            FBFS_Mobile_No=documentSnapshot.getString("Mobile No");
+                            FBFS_Specialization=documentSnapshot.getString("Specialization");
+                            FBFS_Education=documentSnapshot.getString("Education");
+                            FBFS_MCR_No=documentSnapshot.getString("MCR No");
+                            FBFS_Clinic_Name=documentSnapshot.getString("Clinic Name");
+                            FBFS_Address=documentSnapshot.getString("Address");
+                            FBFS_City=documentSnapshot.getString("City");
+                            FBFS_State=documentSnapshot.getString("State");
+
+
+                            DIN_D_Clinic.setText(FBFS_Clinic_Name);
+                            data1="Dr. "+FBFS_FirstName+" "+FBFS_LastName+", ("+FBFS_Specialization+", "+FBFS_Education+")";
+                            DIN_D_data1.setText(data1);
+                            data2="Contact No. "+FBFS_Mobile_No;
+                            DIN_D_data2.setText(data2);
+                            data3="MCR No : "+FBFS_MCR_No;
+                            DIN_D_data3.setText(data3);
+                            data4="Address : "+FBFS_Address+", City : "+FBFS_City+", "+FBFS_State;
+                            DIN_D_data4.setText(data4);
+
+
+
+                        }
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(),"Data Not Found", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                //doctor info end here
+
+
+                //VP_All_P_Details="Date : "+VP_Date+"\n"+"Doctor ID :"+VP_DoctorID+"\n"+"Doctor Name  :"+VP_DoctorName+"\n"+"Patient Name :"+VP_PatientName+"\n"+"Patient Age :"+VP_PatientAge+"\n"+"Diagnosis :"+VP_Diagnosis+"\n"+"Symtoms :"+VP_Symtoms+"\n"+"MedicinceList :\n"+VP_MedicinceList+"\n"+"DoctorNote :"+VP_DoctorNote;
+
+
+                // Toast.makeText(getApplicationContext(),VP_All_P_Details,Toast.LENGTH_SHORT).show();
 
             }
         });
-
-
     }
-
-    private void InvoiceDetails() {
-        DIN_Username.setText("Username :"+DINV_Username);
-        DIN_Details.setText(DINV_All_in_Details);
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void DownloadInvoice(View view) {
 
@@ -97,55 +162,78 @@ public class Detail_Invoice extends AppCompatActivity {
         Canvas canvas = page.getCanvas();
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawBitmap(btm1,300,5,paint);
-        paint.setTextSize(20.0f);
-        canvas.drawText("Invoice",260,73,paint);
+        canvas.drawBitmap(btm1,40,40,paint);
+        paint.setTextSize(50.0f);
+        canvas.drawText(FBFS_Clinic_Name,220,100,paint);
         paint.setTextAlign(Paint.Align.LEFT);
         paint.setTextSize(10.0f);
         paint.setColor(Color.BLACK);
-        paint.setStrokeWidth(2);
-        canvas.drawLine(0, 90, 985, 90, paint);
+        paint.setStrokeWidth(1);
 
-        canvas.drawText("SR No : ",10,120,paint);
+        canvas.drawLine(10, 180, 580, 180, paint);
+        canvas.drawLine(10, 180, 10, 230, paint);
+
+        canvas.drawLine(10, 230, 580, 230, paint);
+        canvas.drawLine(580, 180, 580, 230, paint);
+
+        canvas.drawText(data1,220,130,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_SR_No, 80, 120, paint);
 
-
-        canvas.drawText("Date : ",10,135,paint);
+        canvas.drawText(data2,220,145,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_Date, 80, 135, paint);
 
-        canvas.drawText("Doctor ID : ",10,150,paint);
+        canvas.drawText(data3,220,160,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_DoctorID, 80, 150, paint);
 
-        canvas.drawText("Doctor Name : ",10,165,paint);
+        paint.setTextSize(15.0f);
+        canvas.drawText("Date :"+DINV_Date,460,200,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_DoctorName, 80, 165, paint);
 
-        canvas.drawText("Hospital Name : ",10,180,paint);
+        canvas.drawText("Name : "+DINV_PatientName,20,200,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_HospitalName, 80, 180, paint);
 
-        canvas.drawText("Mobile No : ",10,195,paint);
+        canvas.drawText("Patient ID : "+DINV_PatientID,20,220,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_MobileNo, 80, 195, paint);
 
-        canvas.drawText("Patient ID : ",10,210,paint);
-        paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_PatientID, 80, 210, paint);
 
-        canvas.drawText("Patient Name : ",10,225,paint);
-        paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_PatientName,10,240,paint);
 
-        canvas.drawText("Particulars Details List : ",10,270,paint);
+        canvas.drawLine(10, 260, 580, 260, paint);
+        canvas.drawLine(10, 290, 580, 290, paint);
+        canvas.drawLine(10, 260, 10, 490, paint);
+        canvas.drawLine(580, 260, 580, 490, paint);
+        canvas.drawLine(10, 490, 580, 490, paint);
+
+        paint.setTextSize(15.0f);
+        canvas.drawText("Particulars ",20,280,paint);
+        paint.setTextSize(10.0f);
+        canvas.drawText(DINV_Invoice_Particulars_Details,20,310,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText(DINV_Invoice_Particulars_Details,10,285,paint);
+
+        canvas.drawLine(10, 510, 580, 510, paint);
+        canvas.drawLine(10, 540, 580, 540, paint);
+        canvas.drawLine(10, 565, 580, 565, paint);
+
+        canvas.drawLine(10, 510, 10, 565, paint);
+        canvas.drawLine(580, 510, 580, 565, paint);
+
+        paint.setTextSize(15.0f);
+        canvas.drawText("Total : ",20,530,paint);
+        paint.setTextSize(10.0f);
+        canvas.drawText(DINV_Total,20,555,paint);
+        paint.setColor(Color.BLACK);
+
+
 
         canvas.drawText("Authentic By : ",500,930,paint);
         paint.setColor(Color.BLACK);
         canvas.drawText("Admin ",515,945,paint);
+
+        paint.setColor(Color.BLACK);
+        canvas.drawLine(0, 960, 985, 960, paint);
+
+        paint.setTextSize(15.0f);
+        canvas.drawText(data4,30,980,paint);
+
 
         //canvas.drawt
         // finish the page

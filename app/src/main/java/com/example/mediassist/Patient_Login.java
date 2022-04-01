@@ -4,7 +4,9 @@ package com.example.mediassist;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -27,6 +29,7 @@ public class Patient_Login extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String Patient_mail_detail="";
     String email,password;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +90,15 @@ public class Patient_Login extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Patient Login Successfully", Toast.LENGTH_SHORT).show();
                         PL_Email.setText("");
                         PL_Password.setText("");
+
+
+                        sp = getSharedPreferences("patientData", Context.MODE_PRIVATE);
+                        //startActivity(intent);
+                        //Toast.makeText(Login.this, "email sent is: " + email, Toast.LENGTH_SHORT).show();
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("patient_email", email);
+                        editor.commit();
+
 
                         Intent send = new Intent(Patient_Login.this, Patient_Login_to_HomePage.class);
                         startActivity(send);

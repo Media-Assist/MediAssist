@@ -1,5 +1,6 @@
 package com.example.mediassist;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -11,12 +12,19 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
 
 public class View_Invoice extends AppCompatActivity {
     EditText VIN_Date,VIN_Name;
-    String VIN_Usename;
+    String VIN_Usename,VIN_PID_Email;
     DatePickerDialog picker;
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,12 +64,38 @@ public class View_Invoice extends AppCompatActivity {
 
         VIN_Usename=VIN_Name.getText().toString()+VIN_Date.getText().toString();
 
-        Intent intent = new Intent(getApplicationContext(), Detail_Invoice.class);
-        intent.putExtra("Invoice_Username",VIN_Usename);
-        startActivity(intent);
 
 
-        Toast.makeText(getApplicationContext(),"Done", Toast.LENGTH_SHORT).show();
+
+        DocumentReference documentReference = db.collection("Invoice").document(VIN_Usename);
+
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    VIN_PID_Email=documentSnapshot.getString("PatientID");
+
+
+                    Intent intent = new Intent(getApplicationContext(), Detail_Invoice.class);
+                    intent.putExtra("Username_VIN", VIN_Usename);
+                    intent.putExtra("PatientMail_VIN",VIN_PID_Email);
+                    startActivity(intent);
+
+
+                }else {
+                    VIN_Name.setError("Invalid Information");
+                    VIN_Date.setError("Invalid Information");
+                    Toast.makeText(getApplicationContext(),"Wrong Info",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Data Not Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 

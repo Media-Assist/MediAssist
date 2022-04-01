@@ -24,12 +24,14 @@ public class Doctor_menu extends AppCompatActivity {
     }
 
     public void CreateInvoice(View view) {
-        Intent send = new Intent(Doctor_menu.this, Create_Invoice.class);
+        Intent send = new Intent(Doctor_menu.this, Doctor_Manu_toCreate_Invoice.class);
+        send.putExtra("DoctorID_TO_CIN",D_UserEmail_VC);
         startActivity(send);
     }
 
     public void Sicknote(View view) {
-        Intent send = new Intent(Doctor_menu.this, Create_Sicknote.class);
+        Intent send = new Intent(Doctor_menu.this, Doctor_Manu_toCreate_SickNote.class);
+        send.putExtra("DoctorID_TO_CSI",D_UserEmail_VC);
         startActivity(send);
     }
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Doctor_Manu_toCreate_SickNote"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Info"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30dp"></TextView>
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fill in the basic information before moving on to the next page"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="12dp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/BI_CSI_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="  For Ex. 21012020(DDMMYY)"
+        android:layout_marginTop="10dp"
+        android:layout_margin="20dp"
+        android:inputType="date"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor ID"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/BI_CSI_DID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="Email ID"
+        android:inputType="textEmailAddress"></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient ID"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"></TextView>
+    <EditText
+        android:id="@+id/BI_CSI_PID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="Email ID"
+        android:inputType="textEmailAddress"></EditText>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:onClick="gotoCreateMySickNote"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"></Button>
+</LinearLayout>

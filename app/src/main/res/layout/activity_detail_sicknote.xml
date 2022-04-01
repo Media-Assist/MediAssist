@@ -5,37 +5,222 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Detail_Sicknote"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cardviewBG">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/notepad"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"></ImageView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
-            android:text="SickNote"
+            android:textSize="30dp"
+            android:text="Sick Note"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_marginTop="40dp"></TextView>
-        <TextView
-            android:id="@+id/DSN_Username"
+            android:layout_marginTop="10dp"></TextView>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="null"
             android:layout_margin="20dp"
-            android:textColor="@color/black"
-            android:textSize="20dp"></TextView>
-        <TextView
-            android:id="@+id/DSN_Details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="null"
-            android:layout_margin="20dp"
-            android:textColor="@color/black"
-            android:textSize="20dp"></TextView>
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/redcross3"
+                        android:layout_marginTop="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="70dp"
+                        android:layout_marginLeft="30dp"></ImageView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/DSI_D_Clinic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Clinic"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="30dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="40dp"></TextView>
+                        <TextView
+                            android:id="@+id/DSI_D_data1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data 1"
+                            android:textSize="13dp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="40dp"></TextView>
+                        <TextView
+                            android:id="@+id/DSI_D_data2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data 2"
+                            android:textSize="13dp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="40dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/DSI_D_data3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Data 3"
+                            android:textSize="13dp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="40dp"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date :"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                    <TextView
+                        android:id="@+id/DSI_Date_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="28-03-2022"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient Name :"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/DSI_Patient_Name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Neel"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient ID :"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/DSI_Patient_ID_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Neel"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type Of SickNote :"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                    <TextView
+                        android:id="@+id/DSI_TypeOfSickNote_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fever"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SickNote :"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                    <TextView
+                        android:id="@+id/DSI_SickNote_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 Day Rest"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="20dp"></TextView>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/DSI_D_data4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="data4"
+                        android:textSize="14dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
 
         <Button
             android:layout_width="wrap_content"

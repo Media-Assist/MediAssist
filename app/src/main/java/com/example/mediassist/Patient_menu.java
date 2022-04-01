@@ -36,7 +36,8 @@ public class Patient_menu extends AppCompatActivity {
     }
 
     public void PatientProfile(View view) {
-        Toast.makeText(getApplicationContext(),"Doctor Profile Not available",Toast.LENGTH_SHORT).show();
+        Intent send = new Intent(Patient_menu.this, MainActivity2.class);
+        startActivity(send);
     }
 
     public void PatientLogout(View view) {

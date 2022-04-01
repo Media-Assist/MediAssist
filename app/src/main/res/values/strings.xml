@@ -246,4 +246,17 @@
         <item>30</item>
         <item>31</item>
     </string-array>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+
+    <string name="back">Back</string>
+    <string name="doctor_profile">Doctor Profile</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="selected_date">Selected Date</string>
+    <string name="search_doc">Search by Specialization</string>
+    <string name="no_appointment">No Appointment</string>
 </resources>

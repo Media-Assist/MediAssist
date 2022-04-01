@@ -22,23 +22,6 @@
             android:textColor="@color/black"
             ></TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter Sr No"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:inputType="number"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"></TextView>
-        <EditText
-            android:id="@+id/CI_SRNo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="For Ex. 6385"
-            android:layout_margin="20dp"
-            android:inputType="number"></EditText>
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,6 +30,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
             android:textSize="20dp"></TextView>
         <EditText
             android:id="@+id/CI_HospitalName"
@@ -142,25 +126,6 @@
             android:layout_marginTop="10dp">
         </EditText>
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ENTER PHONE NUMBER:"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/black"
-            android:layout_marginTop="10dp"/>
-        <EditText
-            android:id="@+id/CI_PNo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="For Ex.  9090909090"
-            android:layout_marginTop="10dp"
-            android:layout_margin="20dp"
-            android:inputType="number">
-        </EditText>
 
         <TextView
             android:layout_width="wrap_content"

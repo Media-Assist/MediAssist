@@ -1,5 +1,6 @@
 package com.example.mediassist;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -11,11 +12,18 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
 public class View_Sicknote extends AppCompatActivity {
     EditText VS_name,VS_date;
-    String VSN_Username;
+    String VSN_Username,VS_PID_Email;
     DatePickerDialog picker;
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +65,40 @@ public class View_Sicknote extends AppCompatActivity {
         }
         VSN_Username=VS_name.getText().toString()+VS_date.getText().toString();
 
-        Intent intent = new Intent(getApplicationContext(), Detail_Sicknote.class);
-        intent.putExtra("Sicknote_Username",VSN_Username);
-        startActivity(intent);
+
+
+        DocumentReference documentReference = db.collection("Sicknote").document(VSN_Username);
+
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    VS_PID_Email=documentSnapshot.getString("PatientID");
+
+
+                    Intent intent = new Intent(getApplicationContext(), Detail_Sicknote.class);
+                    intent.putExtra("Username_VSI", VSN_Username);
+                    intent.putExtra("PatientMail_VSI",VS_PID_Email);
+                    startActivity(intent);
+
+
+                }else {
+                    VS_name.setError("Invalid Information");
+                    VS_date.setError("Invalid Information");
+                    Toast.makeText(getApplicationContext(),"Wrong Info",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Data Not Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
     }
 
 

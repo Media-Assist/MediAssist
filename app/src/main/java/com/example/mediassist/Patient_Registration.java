@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -38,6 +40,8 @@ public class Patient_Registration extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseFirestore db;
     String gender;
+    DatabaseReference db1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +82,8 @@ public class Patient_Registration extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         db=FirebaseFirestore.getInstance();
+
+        db1= FirebaseDatabase.getInstance().getReference("AppointmentPatient");
     }
 
     public void PR_Register_Patient(View view) {
@@ -163,6 +169,7 @@ public class Patient_Registration extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"User Created Successfully", Toast.LENGTH_SHORT).show();
                     storePatientData();
+
                     startActivity(new Intent(Patient_Registration.this,Patient_Login.class));
                 }else{
                     Toast.makeText(getApplicationContext(),"Registration Error "+email+" : "+password, Toast.LENGTH_SHORT).show();
@@ -190,6 +197,16 @@ public class Patient_Registration extends AppCompatActivity {
         items.put("Password",PR_Password.getText().toString());
         items.put("TypeOfUser","Patient");
         items.put("UserCredential","True");
+
+        //realtime data
+        String T_Email=PR_Email.getText().toString();
+        T_Email=T_Email.replace('.',',');
+
+        HashMap<String, String> data = new HashMap<>();
+        data.put("Email",PR_Email.getText().toString());
+        db1.child(T_Email).setValue(data);
+        //end
+
         documentReference.set(items).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {

@@ -9,4 +9,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btncolor">#3F51B5</color>
     <color name="cardviewBG">#C2DBEF</color>
+
+
+    <color name = "colorPrimary">#008577</color>
+    <color name = "colorPrimaryDark">#00574B</color>
+    <color name="most_button_Used">#0F7DC2</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="colorPrimary1">#0c9e4e</color>
+    <color name="darkGreen">#009688</color>
+    <color name="red">#FF0000</color>
+    <color name="no_appointment">#004e92</color>
+    <color name="skyBlue">#FF17A8EC</color>
+
 </resources>

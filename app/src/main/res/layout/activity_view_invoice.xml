@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:hint="Ex. Bill"
+            android:inputType="textEmailAddress"
             android:layout_margin="20dp"></EditText>
 
         <TextView

@@ -69,7 +69,21 @@
             android:hint="Ex 12345"
             android:layout_margin="20dp"
             android:inputType="number"></EditText>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"></TextView>
+        <EditText
+            android:id="@+id/SN_DName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gill Gates"
+            android:layout_margin="20dp"
+            android:inputType="number"></EditText>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -36,7 +36,8 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"></TextView>
+        android:layout_marginTop="50dp"
+        ></TextView>
     <EditText
         android:id="@+id/BI_CP_DID"
         android:layout_width="match_parent"
