@@ -22,6 +22,8 @@ public class Splash_Screen extends AppCompatActivity {
 // free kejriwal
 
 // Down with imperialism.
+
+                // weed
             }
         },3000);
 
