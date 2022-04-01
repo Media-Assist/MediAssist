@@ -19,11 +19,13 @@ public class Splash_Screen extends AppCompatActivity {
                 Intent send = new Intent(getApplicationContext(), Login_option.class);
                 startActivity(send);
                 finish();
-// free kejriwal
+/**
+ * free kejriwal
+ *Down with imperialism.
+ *Every life matters.
+ * */
 
-// Down with imperialism.
 
-                // weed
             }
         },3000);
 
