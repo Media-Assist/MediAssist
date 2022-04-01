@@ -20,6 +20,8 @@ public class Splash_Screen extends AppCompatActivity {
                 startActivity(send);
                 finish();
 // free kejriwal
+
+// Down with imperialism.
             }
         },3000);
 
