@@ -28,7 +28,23 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="12dp"></TextView>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/BI_CP_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="  For Ex. 21012020(DDMMYY)"
+        android:layout_marginTop="10dp"
+        android:layout_margin="20dp"
+        android:inputType="date"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +52,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         ></TextView>
     <EditText
         android:id="@+id/BI_CP_DID"

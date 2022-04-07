@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:hint="Ex. Bill"
-            android:text="hnparmar85@gmail.com"
             android:layout_margin="20dp"></EditText>
 
         <TextView
@@ -54,7 +53,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="29-3-2022"
             android:hint="Ex. DD/MM/YYYY"
             android:layout_margin="20dp"></EditText>
 

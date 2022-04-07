@@ -35,7 +35,7 @@ public class Create_Prescription extends AppCompatActivity {
     RadioButton before,after;
     Button CP_ADDMedicine_Btn,CP_Submit;
     String medi,meal,time,days_spinner,day_et;
-    String getDID,getPID;
+    String getDID,getPID,getDate;
     //String date;
     String All_details = "";
     int addmedicine_flag=0;
@@ -51,6 +51,8 @@ public class Create_Prescription extends AppCompatActivity {
 
         getDID=intent.getStringExtra("D_DoctorID");
         getPID=intent.getStringExtra("P_PatientID");
+        getDate=intent.getStringExtra("D_Date");
+
 
         CP_Date=findViewById(R.id.CP_Date);
         CP_Did=findViewById(R.id.CP_Did);
@@ -79,6 +81,7 @@ public class Create_Prescription extends AppCompatActivity {
         CP_ADDMedicine_Btn=findViewById(R.id.CP_ADDMedicine_Btn);
         CP_Submit=findViewById(R.id.CP_Submit);
 
+        CP_Date.setText(getDate);
         CP_Did.setText(getDID);
         CP_PID.setText(getPID);
 

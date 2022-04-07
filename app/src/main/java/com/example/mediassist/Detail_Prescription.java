@@ -254,7 +254,21 @@ public class Detail_Prescription extends AppCompatActivity {
         paint.setTextSize(10.0f);
         paint.setColor(Color.BLACK);
         paint.setStrokeWidth(1);
-        canvas.drawLine(0, 180, 985, 180, paint);
+        canvas.drawLine(5, 180, 590, 180, paint);
+
+
+
+        canvas.drawLine(5, 10, 590, 10, paint);
+        canvas.drawLine(5, 995, 590, 995, paint);
+
+       canvas.drawLine(5, 10, 5, 995, paint);
+       canvas.drawLine(590, 10, 590, 995, paint);
+
+     //   canvas.drawLine(10, 180, 580, 180, paint);
+     //   canvas.drawLine(10, 180, 10, 230, paint);
+
+      //  canvas.drawLine(10, 230, 580, 230, paint);
+      //  canvas.drawLine(580, 180, 580, 230, paint);
 
         canvas.drawText(data1,220,130,paint);
         paint.setColor(Color.BLACK);
@@ -300,15 +314,19 @@ public class Detail_Prescription extends AppCompatActivity {
         paint.setColor(Color.BLACK);
 
 
-        canvas.drawText("Authentic By : ",500,930,paint);
+        canvas.drawText("Authentic By : ",480,930,paint);
         paint.setColor(Color.BLACK);
-        canvas.drawText("Admin ",515,945,paint);
+        canvas.drawText("Admin ",495,945,paint);
 
         paint.setColor(Color.BLACK);
-        canvas.drawLine(0, 960, 985, 960, paint);
+        canvas.drawLine(5, 960, 590, 960, paint);
 
         paint.setTextSize(15.0f);
-        canvas.drawText(data4,30,980,paint);
+        canvas.drawText(data4,30,985,paint);
+
+
+
+
 
 
         //canvas.drawt

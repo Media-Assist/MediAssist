@@ -18,6 +18,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
+import org.jitsi.meet.sdk.JitsiMeet;
+import org.jitsi.meet.sdk.JitsiMeetActivity;
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -31,7 +35,7 @@ public class Doctor_Videocall extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_videocall);
-/*
+
         Intent intent = getIntent();
         Roomcode = intent.getStringExtra("RoomCode");
 
@@ -85,6 +89,6 @@ public class Doctor_Videocall extends AppCompatActivity {
             }
         });
 
-        */
+
     }
 }
