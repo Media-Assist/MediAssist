@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/layout/activity_detail_sicknote.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_doctor_basic_info.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_doctor_login.xml" value="0.15715579710144928" />
-        <entry key="app/src/main/res/layout/activity_doctor_login_to_home_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_doctor_login_to_home_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_doctor_manu_to_create_invoice.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_doctor_manu_to_create_sick_note.xml" value="0.14673913043478262" />
         <entry key="app/src/main/res/layout/activity_doctor_menu.xml" value="0.25" />
@@ -30,10 +30,11 @@
         <entry key="app/src/main/res/layout/activity_patient_registration.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_patient_video_call.xml" value="0.15353260869565216" />
         <entry key="app/src/main/res/layout/activity_pharmacy_login.xml" value="0.15353260869565216" />
+        <entry key="app/src/main/res/layout/activity_pharmacy_login_to_home_page.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_pharmacy_menu.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_pharmacy_registration.xml" value="0.129981884057971" />
         <entry key="app/src/main/res/layout/activity_pharmacy_view_prescription.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.14673913043478262" />
         <entry key="app/src/main/res/layout/activity_view_invoice.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_view_prescription.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_view_sicknote.xml" value="0.15715579710144928" />

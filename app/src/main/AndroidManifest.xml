@@ -14,11 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAssist">
         <activity
+            android:name=".Pharmacy_Login_to_HomePage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity2"
             android:exported="false"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.MediAssist.NoActionBar"
-             />
+            android:theme="@style/Theme.MediAssist.NoActionBar" />
         <activity
             android:name=".Doctor_Manu_toCreate_SickNote"
             android:exported="false" />
@@ -45,7 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".Splash_Screen"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Doctor_Login_to_HomePage"
             android:exported="false" />
@@ -87,7 +89,7 @@
             android:exported="false" />
         <activity
             android:name=".View_Sicknote"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Detail_Invoice"
             android:exported="false" />
@@ -112,30 +114,21 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
-
-
-
         <activity
             android:name=".RealtimeDB.Login2"
             android:exported="false" />
-
-
         <activity
             android:name=".RealtimeDB.BookAppointment"
             android:exported="false" />
-
         <activity
             android:name=".Doctor.DoctorView"
             android:exported="false" />
-
         <activity
             android:name=".Doctor.Doctor"
             android:exported="false" />
         <activity
             android:name=".Specialization.Specialization"
             android:exported="false" />
-
     </application>
 
 </manifest>

@@ -84,12 +84,12 @@ EditText Pharma_L_Email,Pharma_L_Password;
                     //check doctor details in firebase firestore
                     if (Doctor_mail_detail.equals(email)){
                         // Toast.makeText(getApplicationContext(),Doctor_mail_detail+"data from firestore", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),"Doctor Login Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Pharma Login Successfully", Toast.LENGTH_SHORT).show();
                         Pharma_L_Email.setText("");
                         Pharma_L_Password.setText("");
 
-                        Intent send = new Intent(Pharmacy_Login.this, Pharmacy_menu.class);
-                        send.putExtra("PharmaEmail",email);
+                        Intent send = new Intent(Pharmacy_Login.this, Pharmacy_Login_to_HomePage.class);
+                        send.putExtra("PharmaEmail_LP",email);
                         startActivity(send);
                         finish();
 
