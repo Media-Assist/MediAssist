@@ -7,10 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-import org.jitsi.meet.sdk.JitsiMeet;
-import org.jitsi.meet.sdk.JitsiMeetActivity;
-import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -28,7 +24,7 @@ public class Patient_VideoCall extends AppCompatActivity {
         shareBtn = findViewById(R.id.shareBtn);
 
         URL serverURL;
-
+/*
         try {
             serverURL = new URL("https://meet.jit.si");
             JitsiMeetConferenceOptions defaultOptions =
@@ -53,7 +49,7 @@ public class Patient_VideoCall extends AppCompatActivity {
                 JitsiMeetActivity.launch( Patient_VideoCall.this , options  );
             }
         });
-
+*/
 
 
     }

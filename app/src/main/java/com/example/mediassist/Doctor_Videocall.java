@@ -18,9 +18,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-import org.jitsi.meet.sdk.JitsiMeet;
-import org.jitsi.meet.sdk.JitsiMeetActivity;
-import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -62,7 +59,7 @@ public class Doctor_Videocall extends AppCompatActivity {
             }
         });
         URL serverURL;
-
+/*
         try {
             serverURL = new URL("https://meet.jit.si");
             JitsiMeetConferenceOptions defaultOptions =
@@ -88,6 +85,7 @@ public class Doctor_Videocall extends AppCompatActivity {
                 JitsiMeetActivity.launch( Doctor_Videocall.this , options  );
             }
         });
+        */
 
 
     }
