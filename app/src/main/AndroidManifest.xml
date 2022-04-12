@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAssist">
         <activity
+            android:name=".Pharma_ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Patient_ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Forgot_Password"
+            android:exported="false" />
+        <activity
             android:name=".Pharmacy_Login_to_HomePage"
             android:exported="false" />
         <activity
@@ -47,7 +56,7 @@
             android:exported="false" />
         <activity
             android:name=".Splash_Screen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,9 +86,7 @@
             android:exported="false" />
         <activity
             android:name=".Login_option"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Patient_menu"
             android:exported="true" />
@@ -103,9 +110,7 @@
             android:exported="false" />
         <activity
             android:name=".View_Prescription"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Create_Sicknote"
             android:exported="true" />

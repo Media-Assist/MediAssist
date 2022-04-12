@@ -4,6 +4,7 @@ package com.example.mediassist;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,6 +31,7 @@ public class Patient_Login extends AppCompatActivity {
     String Patient_mail_detail="";
     String email,password;
     SharedPreferences sp;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,10 @@ public class Patient_Login extends AppCompatActivity {
     }
 
     private void patientLogin() {
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Login...");
+        progressDialog.show();
 
         email=PL_Email.getText().toString();
         password=PL_Password.getText().toString();
@@ -99,16 +105,21 @@ public class Patient_Login extends AppCompatActivity {
                         editor.putString("patient_email", email);
                         editor.commit();
 
-
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
                         Intent send = new Intent(Patient_Login.this, Patient_Login_to_HomePage.class);
                         startActivity(send);
                         finish();
                     }else {
                         PL_Email.setError("Invalid Detail");
                         PL_Password.requestFocus();
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
                     }
 
                 }else{
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(),"Login Error", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -125,4 +136,9 @@ public class Patient_Login extends AppCompatActivity {
     }
 
 
+    public void forgot_password_oncliclk(View view) {
+        Intent send = new Intent(Patient_Login.this, Patient_ForgotPassword.class);
+        startActivity(send);
+        finish();
+    }
 }

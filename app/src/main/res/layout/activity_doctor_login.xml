@@ -55,7 +55,14 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:layout_margin="20dp"></EditText>
-
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Forgot Password ?"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginBottom="30dp"
+    android:onClick="forgot_password_oncliclk"></TextView>
         <Button
             android:id="@+id/DL_Login"
             android:layout_width="wrap_content"

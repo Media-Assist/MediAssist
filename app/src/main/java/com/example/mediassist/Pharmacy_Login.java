@@ -3,6 +3,7 @@ package com.example.mediassist;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,7 +26,8 @@ EditText Pharma_L_Email,Pharma_L_Password;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String Doctor_mail_detail="";
-    String email,password;;
+    String email,password;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,10 @@ EditText Pharma_L_Email,Pharma_L_Password;
     }
 
     private void PharmacyLogin() {
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Login...");
+        progressDialog.show();
 
         email=Pharma_L_Email.getText().toString();
         password=Pharma_L_Password.getText().toString();
@@ -88,6 +94,9 @@ EditText Pharma_L_Email,Pharma_L_Password;
                         Pharma_L_Email.setText("");
                         Pharma_L_Password.setText("");
 
+
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
                         Intent send = new Intent(Pharmacy_Login.this, Pharmacy_Login_to_HomePage.class);
                         send.putExtra("PharmaEmail_LP",email);
                         startActivity(send);
@@ -99,11 +108,17 @@ EditText Pharma_L_Email,Pharma_L_Password;
                     }else {
                         Pharma_L_Email.setError("Invalid Detail");
                         Pharma_L_Email.requestFocus();
+
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
                     }
 
 
                 }else{
                     Toast.makeText(getApplicationContext(),"Login Error", Toast.LENGTH_SHORT).show();
+
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
                 }
             }
         });
@@ -117,5 +132,8 @@ EditText Pharma_L_Email,Pharma_L_Password;
     }
 
 
-
+    public void forgot_password_oncliclk(View view) {
+        Intent send = new Intent(Pharmacy_Login.this, Pharma_ForgotPassword.class);
+        startActivity(send);
+    }
 }

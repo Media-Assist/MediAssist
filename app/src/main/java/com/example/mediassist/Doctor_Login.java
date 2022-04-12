@@ -4,6 +4,7 @@ package com.example.mediassist;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -27,6 +28,7 @@ public class Doctor_Login extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String Doctor_mail_detail="";
     String email,password;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,11 @@ public class Doctor_Login extends AppCompatActivity {
     }
 
     private void doctorLogin() {
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Login...");
+        progressDialog.show();
+
         email=DL_Email.getText().toString();
         password=DL_Password.getText().toString();
 
@@ -89,6 +96,9 @@ public class Doctor_Login extends AppCompatActivity {
                         DL_Email.setText("");
                         DL_Password.setText("");
 
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
+
                         Intent send = new Intent(Doctor_Login.this, Doctor_Login_to_HomePage.class);
                         send.putExtra("DoctorEmail",email);
                         startActivity(send);
@@ -100,11 +110,15 @@ public class Doctor_Login extends AppCompatActivity {
                     }else {
                         DL_Email.setError("Invalid Detail");
                         DL_Email.requestFocus();
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
                     }
 
 
                 }else{
                     Toast.makeText(getApplicationContext(),"Login Error", Toast.LENGTH_SHORT).show();
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
                 }
             }
         });
@@ -122,4 +136,8 @@ public class Doctor_Login extends AppCompatActivity {
     }
 
 
+    public void forgot_password_oncliclk(View view) {
+        Intent send = new Intent(Doctor_Login.this, Forgot_Password.class);
+        startActivity(send);
+    }
 }

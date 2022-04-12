@@ -21,15 +21,18 @@
         <entry key="app/src/main/res/layout/activity_doctor_registration.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_doctor_videocall.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_doctor_view.xml" value="0.14673913043478262" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.14673913043478262" />
         <entry key="app/src/main/res/layout/activity_login_option.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_patient_forgot_password.xml" value="0.14673913043478262" />
+        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_patient_login_to_home_page.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_patient_menu.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_patient_registration.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_patient_video_call.xml" value="0.15353260869565216" />
-        <entry key="app/src/main/res/layout/activity_pharmacy_login.xml" value="0.15353260869565216" />
+        <entry key="app/src/main/res/layout/activity_pharma_forgot_password.xml" value="0.14673913043478262" />
+        <entry key="app/src/main/res/layout/activity_pharmacy_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_pharmacy_login_to_home_page.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_pharmacy_menu.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_pharmacy_registration.xml" value="0.129981884057971" />
