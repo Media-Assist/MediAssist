@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Doctor_Login"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cardviewBG">
 
 
     <LinearLayout
@@ -21,7 +22,15 @@
             android:layout_margin="60dp"
             android:gravity="center"
             android:text="Doctor Login"></TextView>
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="20dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,33 +77,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:layout_margin="20dp"
             android:layout_gravity="center"
             android:onClick="DL_Login"
-            android:background="@color/btncolor"></Button>
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="@drawable/button_background"></Button>
 
         <Button
             android:id="@+id/DR_CreateAccoount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Account"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:layout_margin="20dp"
             android:layout_gravity="center"
             android:onClick="DR_CreateAccoount"
-            android:background="@color/btncolor"></Button>
-
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="@drawable/button_background"></Button>
+</LinearLayout>
+        </androidx.cardview.widget.CardView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login As Patien"
             android:textSize="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:onClick="gotoPatient_Login"></TextView>
+            android:onClick="gotoPatient_Login"
+            android:layout_marginBottom="20dp"></TextView>
     </LinearLayout>
 
 

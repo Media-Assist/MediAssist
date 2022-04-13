@@ -93,7 +93,9 @@ FirebaseFirestore db=FirebaseFirestore.getInstance();
                         send.putExtra("D_DoctorID",BI_CP_DID.getText().toString());
                         send.putExtra("D_Date",BI_CP_Date.getText().toString());
                         send.putExtra("P_PatientID",BI_CP_PID.getText().toString());
+                        //send.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(send);
+                        finish();
                     }
                 }else {
                     Toast.makeText(getApplicationContext(),"wrong ID", Toast.LENGTH_SHORT).show();

@@ -20,7 +20,9 @@ public class Doctor_menu extends AppCompatActivity {
     public void CreatePrescription(View view) {
         Intent send = new Intent(Doctor_menu.this, Doctor_basic_Info.class);
         send.putExtra("DoctorID",D_UserEmail_VC);
+        //send.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(send);
+        finish();
     }
 
     public void CreateInvoice(View view) {

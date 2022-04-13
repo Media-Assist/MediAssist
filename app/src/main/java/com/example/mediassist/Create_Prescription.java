@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -42,6 +43,7 @@ public class Create_Prescription extends AppCompatActivity {
     DatePickerDialog picker;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String FB_D_Firstname,FB_D_LastName,FB_P_Firstname,FB_P_LastName;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -203,6 +205,7 @@ public class Create_Prescription extends AppCompatActivity {
                     CP_ET_medicinces.setError("Add Details Required");
                 }
 
+
                 insertPresctiptionData();
 
             }
@@ -246,6 +249,11 @@ public class Create_Prescription extends AppCompatActivity {
 
     private void insertPresctiptionData() {
 
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Login...");
+        progressDialog.show();
+
         DocumentReference documentReference = db.collection("Prescription").document(CP_PID.getText().toString()+CP_Date.getText().toString());
         Map<String,String> items=new HashMap<>();
         items.put("Date",CP_Date.getText().toString());
@@ -280,10 +288,16 @@ public class Create_Prescription extends AppCompatActivity {
                 day_et="";
                 All_details = "";
                 Toast.makeText(getApplicationContext(),"Insert successfully", Toast.LENGTH_SHORT).show();
+
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),"OnFailure: "+e.toString(),Toast.LENGTH_SHORT).show();
             }
         });
