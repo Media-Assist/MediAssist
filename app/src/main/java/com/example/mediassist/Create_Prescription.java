@@ -1,8 +1,5 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -18,13 +15,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,6 +43,7 @@ public class Create_Prescription extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String FB_D_Firstname,FB_D_LastName,FB_P_Firstname,FB_P_LastName;
     ProgressDialog progressDialog;
+    String Symptoms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,6 +119,25 @@ public class Create_Prescription extends AppCompatActivity {
                     FB_P_Firstname=documentSnapshot.getString("FirstName");
                     FB_P_LastName=documentSnapshot.getString("LastName");
                     CP_PName.setText(FB_P_Firstname+" "+FB_P_LastName);
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Data Not Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+// get symptoms
+
+        DocumentReference documentReference_SY = db.collection("Symptoms").document(getPID);
+
+        documentReference_SY.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    Symptoms=documentSnapshot.getString("Symptom");
+                    CP_txt_Symtoms.setText(Symptoms);
                 }
 
             }

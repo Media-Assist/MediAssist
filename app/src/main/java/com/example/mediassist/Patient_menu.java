@@ -1,11 +1,10 @@
 package com.example.mediassist;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Patient_menu extends AppCompatActivity {
 
@@ -36,7 +35,7 @@ public class Patient_menu extends AppCompatActivity {
     }
 
     public void PatientProfile(View view) {
-        Intent send = new Intent(Patient_menu.this, MainActivity2.class);
+        Intent send = new Intent(Patient_menu.this, Patient_Symptom.class);
         startActivity(send);
     }
 

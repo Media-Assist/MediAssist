@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAssist">
         <activity
+            android:name=".Patient_Symptom"
+            android:exported="false" />
+        <activity
             android:name=".Pharma_ForgotPassword"
             android:exported="false" />
         <activity
