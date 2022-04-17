@@ -1,10 +1,5 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -16,19 +11,21 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Calendar;
 
 public class View_Prescription extends AppCompatActivity {
     EditText VP_Name,VP_date;
-    String VP_full_details,VP_PatientName="";
+    String VP_full_details,VP_PatientName="",username;
     DatePickerDialog picker;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
@@ -42,9 +39,14 @@ public class View_Prescription extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{
                 Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
+        Intent intent = getIntent();
+
+        username=intent.getStringExtra("PatientID");
 
         VP_Name=findViewById(R.id.VP_Name);
         VP_date=findViewById(R.id.VP_Date);
+
+        VP_Name.setText(username);
 
         VP_date.setOnClickListener(new View.OnClickListener() {
             @Override

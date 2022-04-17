@@ -3,30 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/folder/MediAssist/app/src/main/res/drawable/background_border.xml" value="0.2265" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/drawable/border.xml" value="0.2265" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_book_appointment.xml" value="0.18432971014492755" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_book_temp.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_invoice.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_prescription.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_sicknote.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_detail_invoice.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_detail_prescription.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_detail_sicknote.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_invoice.xml" value="0.264" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_prescription.xml" value="0.264" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_sicknote.xml" value="0.144" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_detail_invoice.xml" value="0.264" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_detail_prescription.xml" value="0.176" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_detail_sicknote.xml" value="0.2" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor.xml" value="0.1" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_basic_info.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_basic_info.xml" value="0.4" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_login.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_login_to_home_page.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_manu_to_create_invoice.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_manu_to_create_sick_note.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_menu.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_registration.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_manu_to_create_invoice.xml" value="0.4" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_manu_to_create_sick_note.xml" value="0.2" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_menu.xml" value="0.176" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_registration.xml" value="0.2" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_videocall.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_forgot_password.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_view.xml" value="0.25" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_forgot_password.xml" value="0.2" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_login2.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_login_option.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_main.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_main2.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_forgot_password.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_login.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_forgot_password.xml" value="0.2" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_login.xml" value="0.1" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_login_to_home_page.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_menu.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_patient_registration.xml" value="0.12158054711246201" />

@@ -16,7 +16,7 @@ The below code is the original code when we make a layout.
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/tab_background"
+    android:background="@color/cardviewBG"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 </androidx.appcompat.widget.Toolbar>

@@ -1,8 +1,5 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Calendar;
 public class View_Sicknote extends AppCompatActivity {
     EditText VS_name,VS_date;
-    String VSN_Username,VS_PID_Email;
+    String VSN_Username,VS_PID_Email,username;
     DatePickerDialog picker;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
@@ -29,9 +29,14 @@ public class View_Sicknote extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_sicknote);
 
+        Intent intent = getIntent();
+
+        username=intent.getStringExtra("PatientID");
 
         VS_name=findViewById(R.id.VS_name);
         VS_date=findViewById(R.id.VS_date);
+
+        VS_name.setText(username);
 
         VS_date.setOnClickListener(new View.OnClickListener() {
             @Override

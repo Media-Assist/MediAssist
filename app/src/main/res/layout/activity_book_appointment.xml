@@ -464,7 +464,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@drawable/button_background"
-
             android:text="Confirm"
             android:textStyle="bold"
             android:textColor="@color/white" />

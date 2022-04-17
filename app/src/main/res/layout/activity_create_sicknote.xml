@@ -176,7 +176,7 @@
             android:layout_gravity="center"
             android:layout_margin="40dp"
             android:textSize="30dp"
-            android:backgroundTint="@color/btncolor"
+            android:background="@drawable/button_background"
             android:textColor="@color/white"
             android:textStyle="bold"
             ></Button>

@@ -34,7 +34,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_border">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -269,7 +271,7 @@
             android:layout_height="68dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/btncolor"
+            android:background="@drawable/button_background"
             android:onClick="DownloadPrescription"
             android:text="Download\nPrescription"
             android:textColor="@color/white"
@@ -301,6 +303,7 @@
             android:layout_gravity="center"
             android:autofillHints="Select"
             android:layout_margin="20dp"
+            android:padding="10dp"
             android:background="@drawable/border"
             android:layout_height="wrap_content"></Spinner>
         <Button
@@ -308,12 +311,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:backgroundTint="@color/btncolor"
+            android:background="@drawable/button_background"
             android:onClick="ShareWithPharmacy"
             android:text="Share Prescription\n With \nPharmacy "
             android:textColor="@color/white"
             android:textSize="20dp"
             android:layout_marginBottom="20dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
             android:textStyle="bold"></Button>
     </LinearLayout>
     </androidx.cardview.widget.CardView>

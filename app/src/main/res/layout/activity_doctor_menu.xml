@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Doctor_menu">
+    tools:context=".Doctor_menu"
+    android:background="@color/cardviewBG"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="40dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +49,6 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:onClick="CreatePrescription"
-                app:cardBackgroundColor="@color/cardviewBG"
                 >
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -77,7 +79,7 @@
                 android:layout_gravity="center"
                 android:onClick="CreateInvoice"
                 android:layout_marginLeft="20dp"
-                app:cardBackgroundColor="@color/cardviewBG">
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -111,7 +113,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:onClick="Sicknote"
-                app:cardBackgroundColor="@color/cardviewBG">
+               >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -143,7 +145,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
                 android:onClick="VideoCall"
-                app:cardBackgroundColor="@color/cardviewBG">
+                >
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,7 +182,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:onClick="DoctorProfile"
-                app:cardBackgroundColor="@color/cardviewBG">
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -212,7 +214,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
                 android:onClick="DoctorLogout"
-                app:cardBackgroundColor="@color/cardviewBG">
+                >
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

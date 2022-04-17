@@ -208,6 +208,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fever"
+                android:padding="10dp"
+                android:background="@drawable/background_border"
                 android:layout_margin="20dp"></TextView>
         </LinearLayout>
         <LinearLayout
@@ -230,6 +232,7 @@
                 android:entries="@array/Medicine"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:background="@drawable/border"
                 android:layout_marginTop="20dp"/>
 
@@ -281,6 +284,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/time"
+                android:padding="10dp"
                 android:background="@drawable/border"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"/>
@@ -313,6 +317,7 @@
                     android:layout_height="wrap_content"
                     android:entries="@array/DMW"
                     android:layout_margin="10dp"
+                    android:padding="10dp"
                     android:background="@drawable/border"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"/>
@@ -335,7 +340,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Dolo 650 "></TextView>
+                android:text="Dolo 650 "
+                android:padding="10dp"
+                android:background="@drawable/background_border"></TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

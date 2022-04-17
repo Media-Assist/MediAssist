@@ -32,11 +32,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="30dp"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/background_border"
+                android:layout_margin="5dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -230,10 +233,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:text="Download\nInvoice"
-            android:backgroundTint="@color/btncolor"
+            android:background="@drawable/button_background"
             android:onClick="DownloadInvoice"
             android:textColor="@color/white"
             android:textSize="20dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
             android:textStyle="bold"></Button>
 
 

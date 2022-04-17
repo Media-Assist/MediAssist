@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Patient_Login"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cardviewBG">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +21,15 @@
             android:layout_margin="60dp"
             android:gravity="center"
             android:text="Patient Login"></TextView>
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +81,9 @@
             android:layout_margin="20dp"
             android:layout_gravity="center"
             android:onClick="PL_Login"
-            android:background="@color/btncolor"></Button>
+            android:background="@drawable/button_background"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"></Button>
 
         <Button
             android:id="@+id/PR_CreateAccoount"
@@ -84,7 +95,9 @@
             android:layout_margin="20dp"
             android:layout_gravity="center"
             android:onClick="PR_CreateAccoount"
-            android:background="@color/btncolor"></Button>
+            android:background="@drawable/button_background"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"></Button>
 
         <TextView
             android:layout_width="match_parent"
@@ -93,7 +106,10 @@
             android:textSize="20dp"
             android:layout_marginTop="50dp"
             android:gravity="center"
+            android:layout_marginBottom="30dp"
             android:onClick="gotoDoctor_Login"></TextView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
     </LinearLayout>
 
 </ScrollView>
