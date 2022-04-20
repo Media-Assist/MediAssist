@@ -1,5 +1,6 @@
 package com.example.mediassist;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,6 +27,7 @@ public class Patient_Symptom extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     String PatientEmail;
     String Symptoms="";
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,11 @@ public class Patient_Symptom extends AppCompatActivity {
     }
 
     public void gettext(View view) {
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Login...");
+        progressDialog.show();
+
 
         if(symptom1.isChecked())
             Symptoms = Symptoms + " Fever ,";
@@ -84,6 +91,8 @@ public class Patient_Symptom extends AppCompatActivity {
         if(Symptoms.isEmpty()){
             CI_txt.setTextColor(this.getResources().getColor(R.color.red));
             CI_txt.setText("Not Selected");
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
         }else {
             CI_txt.setTextColor(this.getResources().getColor(R.color.black));
             CI_txt.setText(Symptoms + " are selected");
@@ -105,12 +114,18 @@ public class Patient_Symptom extends AppCompatActivity {
             public void onSuccess(Void unused) {
                 Symptoms="";
                 Intent send = new Intent(Patient_Symptom.this, MainActivity2.class);
+
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
+
                 startActivity(send);
                 finish();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),"OnFailure: "+e.toString(),Toast.LENGTH_SHORT).show();
             }
         });
