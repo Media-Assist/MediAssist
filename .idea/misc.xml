@@ -65,6 +65,7 @@
         <entry key="app/src/main/res/drawable/button_style_rounded2.xml" value="0.15" />
         <entry key="app/src/main/res/drawable/textbox.xml" value="0.1525" />
         <entry key="app/src/main/res/layout/activity_book_appointment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_create_invoice.xml" value="0.14673913043478262" />
         <entry key="app/src/main/res/layout/activity_create_prescription.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_create_sicknote.xml" value="0.15715579710144928" />
         <entry key="app/src/main/res/layout/activity_detail_invoice.xml" value="0.15715579710144928" />
