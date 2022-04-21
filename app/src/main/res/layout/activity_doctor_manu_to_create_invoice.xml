@@ -55,6 +55,7 @@
         android:hint="  For Ex. 21012020(DDMMYY)"
         android:layout_marginTop="10dp"
         android:layout_margin="20dp"
+        android:focusable="false"
         android:inputType="date"/>
 
     <TextView
@@ -71,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="Email ID"
+        android:focusable="false"
         android:inputType="textEmailAddress"></EditText>
     <TextView
         android:layout_width="match_parent"
@@ -96,6 +98,7 @@
         android:background="@drawable/button_background"
         android:paddingRight="40dp"
         android:paddingLeft="40dp"
+        android:textColor="@color/white"
         android:layout_marginTop="40dp"></Button>
 </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -1,8 +1,5 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +9,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,6 +42,9 @@ public class Doctor_Registration extends AppCompatActivity {
     String gender;
     DatePickerDialog picker;
     DatabaseReference realtimedata;
+    int is8L=0,isnum=0,isupper=0,isspecial=0;
+    TextView DR_worning;
+    String dp_msg="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,8 @@ public class Doctor_Registration extends AppCompatActivity {
         DR_MCR_no=findViewById(R.id.DR_MCR_no);
         DR_Clinic_Name=findViewById(R.id.DR_Clinic_Name);
         DR_D_Gender=findViewById(R.id.DR_D_Gender);
+
+        DR_worning=findViewById(R.id.DR_worning);
 
         DR_DateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,14 +177,100 @@ public class Doctor_Registration extends AppCompatActivity {
 
         if (DR_Password.getText().toString().equals(DR_Confirm_Password.getText().toString())){
             password_flag=1;
-        }
-        if (password_flag==0){
+            checkpass();
+        }else {
             DR_Confirm_Password.setError("Not Equal");
         }
 
-        // Create User
-        createUserDoctor();
-        Toast.makeText(getApplicationContext(),"Done", Toast.LENGTH_SHORT).show();
+        if(password_flag==1 && is8L==1 && isnum==1 && isupper==1 && isspecial==1){
+            // Create User
+            createUserDoctor();
+        }else {
+            DR_Password.setError(dp_msg);
+            DR_Password.requestFocus();
+            //Toast.makeText(getApplicationContext(),password_flag+is8L+isnum+isupper+isspecial,Toast.LENGTH_SHORT).show();
+
+        }
+
+
+    }
+
+    private void checkpass() {
+        String password=DR_Password.getText().toString();
+        dp_msg="";
+        password_flag=0;
+        is8L=0;
+        isnum=0;
+        isupper=0;
+        isspecial=0;
+
+
+        if (password.length()>=8){
+            is8L=1;
+        }
+
+        if (is8L==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            DR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"Atleat 8 character\n";
+            DR_worning.setText(dp_msg);
+            DR_Password.setError(dp_msg);
+            DR_Password.requestFocus();
+        }
+
+        if(password.matches(".*[0-9].*")){
+            isnum=1;
+        }
+
+        if (isnum==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            DR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"minimum one Number(0-9)\n";
+            DR_worning.setText(dp_msg);
+            DR_Password.setError(dp_msg);
+            DR_Password.requestFocus();
+        }
+
+        if(password.matches(".*[A-Z].*")){
+            isupper=1;
+        }
+
+        if (isupper==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            DR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"minimum one Uppercase (A-Z)\n";
+            DR_worning.setText(dp_msg);
+            DR_Password.setError(dp_msg);
+            DR_Password.requestFocus();
+        }
+
+        if(password.matches("^(?=.*[_.()$&@#]).*$")){
+            isspecial=1;
+        }
+
+        if (isspecial==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            DR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"minimum one Special Symbol ( _ . ( ) $ & @ #)";
+            DR_worning.setText(dp_msg);
+            DR_Password.setError(dp_msg);
+            DR_Password.requestFocus();
+        }
+
+        if (DR_Password.getText().toString().equals(DR_Confirm_Password.getText().toString())){
+            password_flag=1;
+            DR_worning.setText("");
+        }else{
+            password_flag=0;
+        }
+        if (DR_Confirm_Password.getText().toString().equals(DR_Password.getText().toString())){
+            password_flag=1;
+            DR_worning.setText("");
+        }else {
+            password_flag=0;
+        }
+
+
 
     }
 
@@ -193,6 +285,7 @@ public class Doctor_Registration extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"User Created Successfully", Toast.LENGTH_SHORT).show();
                     storeDoctorData();
                     startActivity(new Intent(Doctor_Registration.this,Doctor_Login.class));
+
                 }else{
                     Toast.makeText(getApplicationContext(),"Registration Error "+email+" : "+password, Toast.LENGTH_SHORT).show();
                 }

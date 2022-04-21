@@ -1,11 +1,11 @@
 package com.example.mediassist;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Doctor_menu extends AppCompatActivity {
     String D_UserEmail_VC;
@@ -22,7 +22,7 @@ public class Doctor_menu extends AppCompatActivity {
         send.putExtra("DoctorID",D_UserEmail_VC);
         //send.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(send);
-        finish();
+
     }
 
     public void CreateInvoice(View view) {

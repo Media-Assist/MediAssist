@@ -40,14 +40,20 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"></TextView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:hintTextColor="@color/black">
         <EditText
             android:id="@+id/DL_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="abc123@xyz.com"
+            android:background="@color/white"
             android:inputType="textEmailAddress"
             android:layout_margin="20dp"></EditText>
-
+    </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,13 +63,21 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"></TextView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:hintTextColor="@color/black"
+        app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/DL_Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:background="@color/white"
             android:inputType="textPassword"
             android:layout_margin="20dp"></EditText>
+    </com.google.android.material.textfield.TextInputLayout>
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

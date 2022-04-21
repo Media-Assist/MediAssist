@@ -93,10 +93,6 @@ public class Patient_Symptom extends AppCompatActivity {
             CI_txt.setText("Not Selected");
             if (progressDialog.isShowing())
                 progressDialog.dismiss();
-        }else {
-            CI_txt.setTextColor(this.getResources().getColor(R.color.black));
-            CI_txt.setText(Symptoms + " are selected");
-
         }
 
 

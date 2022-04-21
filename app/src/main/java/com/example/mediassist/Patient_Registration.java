@@ -1,9 +1,6 @@
 package com.example.mediassist;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +10,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,7 +42,9 @@ public class Patient_Registration extends AppCompatActivity {
     FirebaseFirestore db;
     String gender;
     DatabaseReference db1;
-
+    int is8L=0,isnum=0,isupper=0,isspecial=0;
+    TextView PR_worning;
+    String dp_msg="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +61,8 @@ public class Patient_Registration extends AppCompatActivity {
 
         PR_Password=findViewById(R.id.PR_Password);
         PR_Confirm_Password=findViewById(R.id.PR_Confirm_Password);
+
+        PR_worning=findViewById(R.id.PR_worning);
 
         PR_D_Gender=findViewById(R.id.PR_D_Gender);
 
@@ -147,14 +152,102 @@ public class Patient_Registration extends AppCompatActivity {
 
         if (PR_Password.getText().toString().equals(PR_Confirm_Password.getText().toString())){
             password_flag=1;
+            checkpass();
         }
         if (password_flag==0){
             PR_Confirm_Password.setError("Not Equal");
         }
-// Create User
-        createUserPatient();
-        Toast.makeText(getApplicationContext(),"Done", Toast.LENGTH_SHORT).show();
 
+
+        if(password_flag==1 && is8L==1 && isnum==1 && isupper==1 && isspecial==1){
+            // Create User
+            createUserPatient();
+
+        }else {
+            PR_Password.setError(dp_msg);
+            PR_Password.requestFocus();
+            //Toast.makeText(getApplicationContext(),password_flag+is8L+isnum+isupper+isspecial,Toast.LENGTH_SHORT).show();
+
+        }
+
+
+    }
+
+    private void checkpass() {
+
+        String password=PR_Password.getText().toString();
+        dp_msg="";
+        password_flag=0;
+        is8L=0;
+        isnum=0;
+        isupper=0;
+        isspecial=0;
+
+
+        if (password.length()>=8){
+            is8L=1;
+        }
+
+        if (is8L==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            PR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"Atleat 8 character\n";
+            PR_worning.setText(dp_msg);
+            PR_Password.setError(dp_msg);
+            PR_Password.requestFocus();
+        }
+
+        if(password.matches(".*[0-9].*")){
+            isnum=1;
+        }
+
+        if (isnum==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            PR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"minimum one Number(0-9)\n";
+            PR_worning.setText(dp_msg);
+            PR_Password.setError(dp_msg);
+            PR_Password.requestFocus();
+        }
+
+        if(password.matches(".*[A-Z].*")){
+            isupper=1;
+        }
+
+        if (isupper==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            PR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"minimum one Uppercase (A-Z)\n";
+            PR_worning.setText(dp_msg);
+            PR_Password.setError(dp_msg);
+            PR_Password.requestFocus();
+        }
+
+        if(password.matches("^(?=.*[_.()$&@#]).*$")){
+            isspecial=1;
+        }
+
+        if (isspecial==0){
+            // DR_Confirm_Password.setError("Not Equal");
+            PR_worning.setTextColor(this.getResources().getColor(R.color.red));
+            dp_msg=dp_msg+"minimum one Special Symbol ( _ . ( ) $ & @ #)";
+            PR_worning.setText(dp_msg);
+            PR_Password.setError(dp_msg);
+            PR_Password.requestFocus();
+        }
+
+        if (PR_Password.getText().toString().equals(PR_Confirm_Password.getText().toString())){
+            password_flag=1;
+            PR_worning.setText("");
+        }else{
+            password_flag=0;
+        }
+        if (PR_Confirm_Password.getText().toString().equals(PR_Password.getText().toString())){
+            password_flag=1;
+            PR_worning.setText("");
+        }else {
+            password_flag=0;
+        }
 
 
     }

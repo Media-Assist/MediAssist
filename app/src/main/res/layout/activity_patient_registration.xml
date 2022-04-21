@@ -198,14 +198,21 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"></TextView>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:hintTextColor="@color/black"
+                    app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/PR_Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Use A-Z a-z 0-9 @#$"
+            android:background="@color/white"
             android:layout_margin="20dp"></EditText>
-
+                </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -215,14 +222,28 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"></TextView>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:hintTextColor="@color/black"
+                    app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/PR_Confirm_Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:background="@color/white"
             android:hint="Use A-Z a-z 0-9 @#$"
             android:layout_margin="20dp"></EditText>
-
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/PR_worning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:gravity="center"></TextView>
         <Button
             android:id="@+id/PR_Register_Patient"
             android:layout_width="wrap_content"
