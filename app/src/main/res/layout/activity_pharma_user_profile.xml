@@ -69,12 +69,13 @@
                             android:layout_marginTop="40dp"
                             android:textColor="@color/black"
                             android:textSize="25dp"
+                            android:text="######"
                             android:textStyle="bold"></TextView>
 
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/pharmacy2"
+                            android:src="@drawable/caduceus"
                             android:layout_marginTop="10dp"
                             ></ImageView>
                     </LinearLayout>
@@ -89,6 +90,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20dp"
                             android:textStyle="bold"
+                            android:text="######"
                             android:layout_marginTop="20dp"
                             android:layout_marginLeft="40dp"
                             android:textColor="@color/black"></TextView>
@@ -97,6 +99,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15dp"
+                            android:text="############"
                             android:textStyle="bold"
                             android:layout_marginLeft="40dp"
                             android:textColor="@color/black"></TextView>
@@ -106,6 +109,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="15dp"
                             android:textStyle="bold"
+                            android:text="###############"
                             android:layout_marginLeft="40dp"
                             android:textColor="@color/black"></TextView>
                         <View
@@ -120,6 +124,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="15dp"
                             android:textStyle="bold"
+                            android:text="################################"
                             android:layout_marginLeft="40dp"
                             android:textColor="@color/black"></TextView>
                     </LinearLayout>

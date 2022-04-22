@@ -11,14 +11,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="10dp"
-    android:padding="10dp">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingBottom="20dp"
-    android:background="@drawable/background_border"
-    android:layout_marginBottom="20dp">
+    android:layout_margin="10dp"
+    android:background="@drawable/background_border">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,14 +61,20 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/black"></TextView>
     </LinearLayout>
-</LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp"
-        android:background="@drawable/background_border"
-        android:layout_marginBottom="20dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/no_appointment"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -217,14 +218,20 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/black"></TextView>
     </LinearLayout>
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp"
-        android:background="@drawable/background_border"
-        android:layout_marginBottom="20dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/no_appointment"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -249,6 +256,6 @@
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"></TextView>
     </LinearLayout>
-</LinearLayout>
+
 </LinearLayout>
 </androidx.cardview.widget.CardView>

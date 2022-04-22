@@ -43,7 +43,7 @@
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_pharmacy_registration.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_pharmacy_view_prescription.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_specialization.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_splash_screen.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_view_invoice.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_view_prescription.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_view_sicknote.xml" value="0.12158054711246201" />
@@ -54,7 +54,7 @@
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/fragment_main.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/fragment_main2.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/fragment_specialization.xml" value="0.12158054711246201" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/item.xml" value="0.536" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/item.xml" value="0.2" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/single_doctor_list.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/single_show_appointment.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/single_specialization_list.xml" value="0.12158054711246201" />
