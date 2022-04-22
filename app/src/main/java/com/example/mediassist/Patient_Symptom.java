@@ -56,7 +56,7 @@ public class Patient_Symptom extends AppCompatActivity {
     public void gettext(View view) {
         progressDialog =new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Login...");
+        progressDialog.setMessage("Loading...");
         progressDialog.show();
 
 

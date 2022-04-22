@@ -270,7 +270,7 @@ public class Create_Prescription extends AppCompatActivity {
 
         progressDialog =new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Login...");
+        progressDialog.setMessage("Loading...");
         progressDialog.show();
 
         DocumentReference documentReference = db.collection("Prescription").document(CP_PID.getText().toString()+CP_Date.getText().toString());

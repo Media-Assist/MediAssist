@@ -1,28 +1,19 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.ArrayList;
 
 public class Pharmacy_menu extends AppCompatActivity {
     TextView pharma_name_mn;
@@ -84,6 +75,9 @@ public class Pharmacy_menu extends AppCompatActivity {
     }
 
     public void Pharma_View_Profile(View view) {
+        Intent send = new Intent(Pharmacy_menu.this,Pharma_UserProfile.class);
+        send.putExtra("Pharma_Profile_Email",PharmaEmail);
+        startActivity(send);
     }
 
     public void Pharma_Logout(View view) {
