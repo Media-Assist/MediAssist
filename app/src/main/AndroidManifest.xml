@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAssist">
         <activity
+            android:name=".DoctorViewAppointment.BookedAppointmentViewDoctor"
+            android:exported="false" />
+        <activity
             android:name=".Pharma_UserProfile"
             android:exported="false" />
         <activity

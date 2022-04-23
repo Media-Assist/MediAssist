@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mediassist.DoctorViewAppointment.BookedAppointmentViewDoctor;
+
 public class Doctor_menu extends AppCompatActivity {
     String D_UserEmail_VC;
     @Override
@@ -45,7 +47,9 @@ public class Doctor_menu extends AppCompatActivity {
     }
 
     public void DoctorProfile(View view) {
-        Toast.makeText(getApplicationContext(),"Doctor Profile Not available",Toast.LENGTH_SHORT).show();
+        Intent send = new Intent(Doctor_menu.this, BookedAppointmentViewDoctor.class);
+        send.putExtra("RoomCode",D_UserEmail_VC);
+        startActivity(send);
     }
 
     public void DoctorLogout(View view) {
