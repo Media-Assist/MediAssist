@@ -1,11 +1,13 @@
 package com.example.mediassist.Patient;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,11 +15,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.mediassist.DoctorViewAppointment.PatientDetails;
+import com.example.mediassist.Doctor_Videocall;
 import com.example.mediassist.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.MyViewHolder > {
@@ -58,19 +66,128 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.MyViewHo
         return patientList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView doctor_name, appointment_time, doctor_specialization, appointment_date;
+        LinearLayout join_appointment, cancel_appointment;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+
             doctor_name = itemView.findViewById(R.id.doctor_name);
             doctor_specialization = itemView.findViewById(R.id.doctor_specialization);
             appointment_time = itemView.findViewById(R.id.appointment_time);
             appointment_date = itemView.findViewById(R.id.appointment_date);
+            cancel_appointment = itemView.findViewById(R.id.cancel_appointment);
+            join_appointment = itemView.findViewById(R.id.join_appointment);
+
+            cancel_appointment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view)  {
+                    //Log.d("Check1", "clicked");
+                    int position = getAdapterPosition();
+                    Patient patientObj = patientList.get(position);
+                    String date, slot, doc_email,pat_email;
+                    date = patientObj.getDate();
+                    slot = changeTimeToSlot( patientObj.getTime() );
+
+                    SharedPreferences sp = view.getContext().getSharedPreferences("patientData", Context.MODE_PRIVATE);
+                    pat_email = sp.getString("patient_email", "");
+                    pat_email = pat_email.replace('.',',');
+
+                    doc_email = patientObj.doctorId.replace('.',',');
+                    Toast.makeText(context, "Position is: " + String.valueOf(position)+
+                            "doctor_mail is: " + patientObj.doctorId, Toast.LENGTH_SHORT).show();
+
+                    //mDatabase.child("Appointment").child(doctorID).child(Appointment_date).child(slot).removeValue();
+                    //mDatabase.child("Booked_Appointments").child(currentUID).child(BookedAPKey).removeValue();
+                    databaseReference.child("AppointmentDoctor").child(doc_email).child(date).child(slot).removeValue();
+                    databaseReference.child("AppointmentPatient").child(pat_email).child(date).child(slot).removeValue();
+                    patientList.remove(position);
+                    notifyDataSetChanged();
+                    Toast.makeText(context, "Removed Successfully", Toast.LENGTH_SHORT).show();
+
+                    // TODO: Make an alert box while the user is clikcing on on delete.
+                }
+            });
+
+            join_appointment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view)  {
+                    int position = getAdapterPosition();
+                    Patient patientObj = patientList.get(position);
+                    String date,time, slot, doc_email,pat_email;
+                    date = patientObj.getDate();
+                    time = patientObj.getTime();
+                    slot = changeTimeToSlot( patientObj.getTime() );
+
+                    SharedPreferences sp = view.getContext().getSharedPreferences("patientData", Context.MODE_PRIVATE);
+                    pat_email = sp.getString("patient_email", "");
+                    doc_email = patientObj.getDoctorId();
+
+                    //Toast.makeText(context, "Position is: " + String.valueOf(position)+
+                    //"doctor_mail is: " + doc_email + "pat_email: " + pat_email + "\ndate: " + date + " time: " + time , Toast.LENGTH_SHORT).show();
+                    String sDate = "";
+                    Date appointment_date = null;
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh:mm a");
+                    try {
+                        appointment_date = sdf.parse(date+" "+time);
+                        sDate= sdf.format(appointment_date);
+
+                    } catch (ParseException e) {
+                        Toast.makeText(context, "Error parsing date", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                    Date today_date = Calendar.getInstance().getTime();
+                    String today_str = sdf.format(today_date);
+
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(appointment_date);
+                    c.add(Calendar.MINUTE, 20);
+
+                    Date updated = c.getTime();
+
+
+                    String updated_date = sdf.format(updated);
+                    System.out.println("Updated date is: " + updated_date);
+
+                    if ( ( today_date.equals(appointment_date) || today_date.after(appointment_date) ) &&
+                            ( today_date.equals(updated) || today_date.before(updated) )
+                    )   {
+
+                        String meet_code = doc_email + pat_email + date + time;
+                        System.out.println("Meet Code: " + meet_code);
+                        System.out.println("Inside the appointment interval\n");
+
+
+                        //startActivity(intent);
+                        //Toast.makeText(Login.this, "email sent is: " + email, Toast.LENGTH_SHORT).show();
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("doctor_meet_code", meet_code);
+                        editor.commit();
+
+                        Intent intent = new Intent(context, Doctor_Videocall.class);
+                        context.startActivity(intent);
+                    }
+                    else if( today_date.after(updated) ){
+                        System.out.println("Meeting has ended");
+                        Toast.makeText(context,"Meeting has Ended",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        System.out.println("Meeting yet to start");
+                        Toast.makeText(context, "Meeting yet to start", Toast.LENGTH_SHORT).show();
+                    }
+            /*
+            Toast.makeText(context, "Appnt Date: " + sDate +
+                    "\nToday: " + today_str + "\n Date: " + date
+                    + "\nTime: " + time, Toast.LENGTH_SHORT).show();
+
+             */
+
+                }
+            });
         }
 
 
-        @Override
+
         public void onClick(View view)  {
             //Log.d("Check1", "clicked");
 

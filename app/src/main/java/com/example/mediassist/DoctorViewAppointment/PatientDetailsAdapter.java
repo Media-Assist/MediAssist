@@ -114,7 +114,7 @@ public class PatientDetailsAdapter extends RecyclerView.Adapter<PatientDetailsAd
 
             String updated_date = sdf.format(updated);
             System.out.println("Updated date is: " + updated_date);
-/*
+
             if ( ( today_date.equals(appointment_date) || today_date.after(appointment_date) ) &&
                     ( today_date.equals(updated) || today_date.before(updated) )
             )   {
@@ -141,22 +141,10 @@ public class PatientDetailsAdapter extends RecyclerView.Adapter<PatientDetailsAd
                 System.out.println("Meeting yet to start");
                 Toast.makeText(context, "Meeting yet to start", Toast.LENGTH_SHORT).show();
             }
-*/
 
 
-            String meet_code = doc_email + pat_email + date + time;
-            System.out.println("Meet Code: " + meet_code);
-            System.out.println("Inside the appointment interval\n");
 
 
-            //startActivity(intent);
-            //Toast.makeText(Login.this, "email sent is: " + email, Toast.LENGTH_SHORT).show();
-            SharedPreferences.Editor editor = sp.edit();
-            editor.putString("doctor_meet_code", meet_code);
-            editor.commit();
-
-            Intent intent = new Intent(context, Doctor_Videocall.class);
-            context.startActivity(intent);
 
             /*
             Toast.makeText(context, "Appnt Date: " + sDate +
