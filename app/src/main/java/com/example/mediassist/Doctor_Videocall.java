@@ -1,33 +1,21 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AppCompatActivity;
 
-
-
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Doctor_Videocall extends AppCompatActivity {
     String Roomcode;
     EditText secretCodeBox;
     Button joinBtn, shareBtn;
-    FirebaseFirestore db=FirebaseFirestore.getInstance();
-    String Doctor_mail_detail,Doctor_Name;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,24 +28,13 @@ public class Doctor_Videocall extends AppCompatActivity {
         joinBtn = findViewById(R.id.joinBtn);
         shareBtn = findViewById(R.id.shareBtn);
 
-        DocumentReference documentReference = db.collection("Doctors").document(Roomcode);
 
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if (documentSnapshot.exists()){
-                    Doctor_mail_detail=documentSnapshot.getString("Email");
-                    Doctor_Name=documentSnapshot.getString("FirstName");
-                    secretCodeBox.setText(Doctor_Name+"247");
-                }
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(),"Data Not Found", Toast.LENGTH_SHORT).show();
-            }
-        });
+        sp = getSharedPreferences("patientData", Context.MODE_PRIVATE);
+        String code=sp.getString("doctor_meet_code","");
+
+        secretCodeBox.setText(code);
+
         URL serverURL;
 /*
         try {

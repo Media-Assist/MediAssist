@@ -46,7 +46,7 @@ String PatientEmail;
     }
 
     public void PatientProfile(View view) {
-        Intent send = new Intent(Patient_menu.this, Patient_Symptom.class);
+        Intent send = new Intent(Patient_menu.this, MainActivity2.class);
         startActivity(send);
     }
 

@@ -1,16 +1,18 @@
 package com.example.mediassist;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,6 +31,7 @@ public class Doctor_Login extends AppCompatActivity {
     String Doctor_mail_detail="";
     String email,password;
     ProgressDialog progressDialog;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +101,15 @@ public class Doctor_Login extends AppCompatActivity {
 
                         if (progressDialog.isShowing())
                             progressDialog.dismiss();
+
+
+
+                        sp = getSharedPreferences("patientData", Context.MODE_PRIVATE);
+                        //startActivity(intent);
+                        //Toast.makeText(Login.this, "email sent is: " + email, Toast.LENGTH_SHORT).show();
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("patient_email", email);
+                        editor.commit();
 
                         Intent send = new Intent(Doctor_Login.this, Doctor_Login_to_HomePage.class);
                         send.putExtra("DoctorEmail",email);

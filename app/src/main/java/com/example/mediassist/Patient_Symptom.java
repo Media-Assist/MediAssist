@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mediassist.RealtimeDB.BookAppointment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -109,7 +110,7 @@ public class Patient_Symptom extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 Symptoms="";
-                Intent send = new Intent(Patient_Symptom.this, MainActivity2.class);
+                Intent send = new Intent(Patient_Symptom.this, BookAppointment.class);
 
                 if (progressDialog.isShowing())
                     progressDialog.dismiss();

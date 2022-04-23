@@ -17,8 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mediassist.Patient_Symptom;
 import com.example.mediassist.R;
-import com.example.mediassist.RealtimeDB.BookAppointment;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -107,7 +107,7 @@ public class DoctorView extends AppCompatActivity {
                         String date = day + "-" + month + "-" + year;
                         editor.putString("selected_date", date);
                         editor.commit();
-                        startActivity(new Intent(DoctorView.this, BookAppointment.class));
+                        startActivity(new Intent(DoctorView.this, Patient_Symptom.class));
                     }
                 });
 

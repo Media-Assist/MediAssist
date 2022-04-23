@@ -134,14 +134,14 @@ public class BookAppointment extends AppCompatActivity implements  View.OnClickL
 
                     if(flag1){ // There is no key for selected_date
                         HashMap<String, String > userMap = new HashMap<>();
-                        userMap.put(String.valueOf(flagChecked), updated_patient_email);
+                        userMap.put(String.valueOf(flagChecked), patient_email);
 
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("AppointmentDoctor").child(finalVal);
                         databaseReference.child(selected_date).setValue(userMap);
                     }else{
 
                         HashMap<String, Object > userMap = new HashMap<>();
-                        userMap.put(String.valueOf(flagChecked), updated_patient_email);
+                        userMap.put(String.valueOf(flagChecked), patient_email);
 
                         rootref.updateChildren(userMap);
                     }

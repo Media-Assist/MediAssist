@@ -1,5 +1,6 @@
 package com.example.mediassist.DoctorViewAppointment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -40,10 +41,12 @@ public class BookedAppointmentViewDoctor extends AppCompatActivity {
     String updated_doctor_email, doctor_email, pat_name, doc_specialization;
     TextView textView;
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booked_appointment_view_doctor);
+
 
         /*
         * Here even though the name is patientData it's the data of user who has login. I am not changing it for now.
@@ -65,6 +68,10 @@ public class BookedAppointmentViewDoctor extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         db = FirebaseDatabase.getInstance().getReference("AppointmentDoctor").child(updated_doctor_email);
         db.addValueEventListener(new ValueEventListener() {
             @Override
@@ -169,7 +176,8 @@ public class BookedAppointmentViewDoctor extends AppCompatActivity {
          * Function showText() is useless currently. As I've not added a textbox.
          * */
         //showText();
-
+        if (progressDialog.isShowing())
+            progressDialog.dismiss();
     }
 
     private void showText() {
