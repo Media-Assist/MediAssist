@@ -71,7 +71,7 @@ public class Pharmacy_menu extends AppCompatActivity {
         Intent send = new Intent(Pharmacy_menu.this,Pharmacy_View_Prescription.class);
         send.putExtra("Pharma_name",D9);
         startActivity(send);
-        finish();
+
     }
 
     public void Pharma_View_Profile(View view) {
@@ -81,5 +81,8 @@ public class Pharmacy_menu extends AppCompatActivity {
     }
 
     public void Pharma_Logout(View view) {
+        Intent send = new Intent(Pharmacy_menu.this,Pharmacy_Login.class);
+        startActivity(send);
+        finish();
     }
 }
