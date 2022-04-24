@@ -112,6 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="28-08-2000"
+            android:focusable="false"
             android:inputType="number"
             android:layout_margin="20dp"></EditText>
 

@@ -92,40 +92,44 @@ public class Patient_Symptom extends AppCompatActivity {
         if(Symptoms.isEmpty()){
             CI_txt.setTextColor(this.getResources().getColor(R.color.red));
             CI_txt.setText("Not Selected");
+            Toast.makeText(Patient_Symptom.this, "Symptom Not Selected", Toast.LENGTH_SHORT).show();
             if (progressDialog.isShowing())
                 progressDialog.dismiss();
+        }else {
+
+            SharedPreferences sp = view.getContext().getSharedPreferences("patientData", Context.MODE_PRIVATE);
+            PatientEmail = sp.getString("patient_email", "");
+
+            DocumentReference documentReference = db.collection("Symptoms").document(PatientEmail);
+            Map<String,String> items=new HashMap<>();
+            items.put("Symptom",Symptoms);
+
+
+
+            documentReference.set(items).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Symptoms="";
+                    Intent send = new Intent(Patient_Symptom.this, BookAppointment.class);
+
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
+
+                    startActivity(send);
+                    finish();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
+                    Toast.makeText(getApplicationContext(),"OnFailure: "+e.toString(),Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
 
-        SharedPreferences sp = view.getContext().getSharedPreferences("patientData", Context.MODE_PRIVATE);
-        PatientEmail = sp.getString("patient_email", "");
 
-        DocumentReference documentReference = db.collection("Symptoms").document(PatientEmail);
-        Map<String,String> items=new HashMap<>();
-        items.put("Symptom",Symptoms);
-
-
-
-        documentReference.set(items).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Symptoms="";
-                Intent send = new Intent(Patient_Symptom.this, BookAppointment.class);
-
-                if (progressDialog.isShowing())
-                    progressDialog.dismiss();
-
-                startActivity(send);
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                if (progressDialog.isShowing())
-                    progressDialog.dismiss();
-                Toast.makeText(getApplicationContext(),"OnFailure: "+e.toString(),Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
