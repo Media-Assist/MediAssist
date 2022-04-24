@@ -83,7 +83,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -110,7 +111,15 @@
                     android:text="Appointment Time"
                     android:textSize="13dp"
                     android:textStyle="bold" />
-
+                <TextView
+                    android:id="@+id/click"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Click Here to Join"
+                    android:textColor="@color/purple_200"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
