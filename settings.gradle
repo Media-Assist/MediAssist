@@ -11,9 +11,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
-      /*  maven {
+        maven {
             url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
-        }*/
+        }
     }
 }
 rootProject.name = "MediAssist"

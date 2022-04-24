@@ -194,21 +194,46 @@
                     android:orientation="vertical"
                     android:layout_margin="10dp"
                     android:background="@drawable/background_border">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                                android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="List of Particulars"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textColor="@color/black"></TextView>
-
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/no_appointment"
+                                    />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
         <TextView
             android:id="@+id/CI_List_OF_Particulars_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Covid test - 1000/-"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             ></TextView>
+                        </LinearLayout>
                 </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"
@@ -216,20 +241,52 @@
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:background="@drawable/background_border">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Total"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textColor="@color/black"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/no_appointment"
+
+                    />
+        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp">
         <TextView
             android:id="@+id/CI_Total_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1000/-"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             ></TextView>
+                </LinearLayout>
 </LinearLayout>
         <Button
             android:id="@+id/CI_CreateInvoice_btn"
