@@ -128,7 +128,7 @@ public class Doctor_Login extends AppCompatActivity {
 
 
                 }else{
-                    Toast.makeText(getApplicationContext(),"Login Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Check Your Email And Password", Toast.LENGTH_SHORT).show();
                     if (progressDialog.isShowing())
                         progressDialog.dismiss();
                 }

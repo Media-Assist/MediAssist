@@ -1,9 +1,6 @@
 package com.example.mediassist;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +10,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -120,7 +120,7 @@ public class Patient_Login extends AppCompatActivity {
                 }else{
                     if (progressDialog.isShowing())
                         progressDialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Login Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Check Your Email And Password", Toast.LENGTH_SHORT).show();
                 }
             }
         });

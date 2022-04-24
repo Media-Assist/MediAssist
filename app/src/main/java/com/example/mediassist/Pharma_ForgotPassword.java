@@ -1,5 +1,6 @@
 package com.example.mediassist;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ public class Pharma_ForgotPassword extends AppCompatActivity {
     EditText PH_Forgot_Password;
     String email;
     FirebaseAuth auth;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +30,17 @@ public class Pharma_ForgotPassword extends AppCompatActivity {
     }
 
     public void forgotPassword(View view) {
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         email=PH_Forgot_Password.getText().toString();
+
         if (email.isEmpty()){
             PH_Forgot_Password.setError("Required");
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
+
         }else {
             forgotpassword3();
 
@@ -46,11 +56,15 @@ public class Pharma_ForgotPassword extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(getApplicationContext(),"Check Your Email",Toast.LENGTH_SHORT).show();
                             Intent send = new Intent(Pharma_ForgotPassword.this, Pharmacy_Login.class);
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
                             startActivity(send);
                             finish();
 
                         }else {
                             Toast.makeText(getApplicationContext(),"Erorr",Toast.LENGTH_SHORT).show();
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
                         }
                     }
                 });

@@ -1,13 +1,14 @@
 package com.example.mediassist;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,6 +18,7 @@ public class Patient_ForgotPassword extends AppCompatActivity {
     EditText P_Forgot_Password;
     String email;
     FirebaseAuth auth;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,15 @@ public class Patient_ForgotPassword extends AppCompatActivity {
     }
 
     public void forgotPassword(View view) {
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         email=P_Forgot_Password.getText().toString();
         if (email.isEmpty()){
             P_Forgot_Password.setError("Required");
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
         }else {
             forgotpassword2();
 
@@ -45,11 +53,15 @@ public class Patient_ForgotPassword extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(getApplicationContext(),"Check Your Email",Toast.LENGTH_SHORT).show();
                             Intent send = new Intent(Patient_ForgotPassword.this, Patient_Login.class);
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
                             startActivity(send);
                             finish();
 
                         }else {
                             Toast.makeText(getApplicationContext(),"Erorr",Toast.LENGTH_SHORT).show();
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
                         }
                     }
                 });
