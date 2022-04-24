@@ -10,6 +10,7 @@
         <entry key="..\:/folder/MediAssist/app/src/main/res/drawable/border.xml" value="0.2265" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_book_appointment.xml" value="0.18432971014492755" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_book_temp.xml" value="0.12158054711246201" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_booked_appointment_view_doctor.xml" value="0.21052631578947367" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_invoice.xml" value="0.264" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_prescription.xml" value="0.264" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_create_sicknote.xml" value="0.144" />
@@ -22,7 +23,7 @@
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_login_to_home_page.xml" value="0.12158054711246201" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_manu_to_create_invoice.xml" value="0.4" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_manu_to_create_sick_note.xml" value="0.2" />
-        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_menu.xml" value="0.176" />
+        <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_menu.xml" value="0.264" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_registration.xml" value="0.2" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_videocall.xml" value="0.264" />
         <entry key="..\:/folder/MediAssist/app/src/main/res/layout/activity_doctor_view.xml" value="0.25" />

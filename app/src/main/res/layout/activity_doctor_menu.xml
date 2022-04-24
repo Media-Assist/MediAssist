@@ -80,23 +80,26 @@
                 android:onClick="CreateInvoice"
                 android:layout_marginLeft="20dp"
                 >
+
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="157dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/invoice1"
-                        android:layout_gravity="center"></ImageView>
+                        android:layout_gravity="center"
+                        android:src="@drawable/invoice1"></ImageView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Create Invoice"
-                        android:textStyle="bold"
                         android:layout_gravity="center"
-                        android:textColor="@color/black"></TextView>
+                        android:text="Create Invoice"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"></TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
