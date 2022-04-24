@@ -88,32 +88,36 @@
     <androidx.cardview.widget.CardView
         android:layout_width="160dp"
         android:layout_height="140dp"
-        android:onClick="PatientLogin"
         android:layout_marginTop="16dp"
+        android:onClick="PatientLogin"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="10dp">
+
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@drawable/man"
-                ></ImageView>
+                android:src="@drawable/man"></ImageView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Patient"
-                android:textStyle="bold"
                 android:layout_gravity="center"
-                android:textColor="@color/black"></TextView>
+                android:text="Patient"
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
