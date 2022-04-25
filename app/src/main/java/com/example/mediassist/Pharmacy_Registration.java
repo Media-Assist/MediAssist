@@ -1,5 +1,6 @@
 package com.example.mediassist;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -40,6 +41,7 @@ EditText Pharma_R_OwnName,Pharma_R_ShopName,Pharma_R_Email,Pharma_R_MobileNo,Pha
     int is8L=0,isnum=0,isupper=0,isspecial=0;
     TextView Pharma_R_worning;
     String dp_msg="";
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,21 +125,32 @@ EditText Pharma_R_OwnName,Pharma_R_ShopName,Pharma_R_Email,Pharma_R_MobileNo,Pha
             return;
         }
 
+        progressDialog =new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
 
         if (Pharma_R_Password.getText().toString().equals(Pharma_R_Confirm_Password.getText().toString())){
             password_flag=1;
+
             checkpass();
         }else {
             Pharma_R_Confirm_Password.setError("Not Equal");
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
         }
 
         if(password_flag==1 && is8L==1 && isnum==1 && isupper==1 && isspecial==1){
-            Pharmacy_spinner_list();
+
             // Create User
             createUserPharmacy();
+
+
         }else {
             Pharma_R_Password.setError(dp_msg);
             Pharma_R_Password.requestFocus();
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
             //Toast.makeText(getApplicationContext(),password_flag+is8L+isnum+isupper+isspecial,Toast.LENGTH_SHORT).show();
 
         }
@@ -213,12 +226,16 @@ EditText Pharma_R_OwnName,Pharma_R_ShopName,Pharma_R_Email,Pharma_R_MobileNo,Pha
             Pharma_R_worning.setText("");
         }else{
             password_flag=0;
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
         }
         if (Pharma_R_Confirm_Password.getText().toString().equals(Pharma_R_Password.getText().toString())){
             password_flag=1;
             Pharma_R_worning.setText("");
         }else {
             password_flag=0;
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
         }
 
 
@@ -245,9 +262,14 @@ EditText Pharma_R_OwnName,Pharma_R_ShopName,Pharma_R_Email,Pharma_R_MobileNo,Pha
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"User Created Successfully", Toast.LENGTH_SHORT).show();
+                    Pharmacy_spinner_list();
                     storePharmacyData();
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
                     startActivity(new Intent(Pharmacy_Registration.this,Pharmacy_Login.class));
                 }else{
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(),"Registration Error "+email+" : "+password, Toast.LENGTH_SHORT).show();
                 }
             }
@@ -290,6 +312,8 @@ EditText Pharma_R_OwnName,Pharma_R_ShopName,Pharma_R_Email,Pharma_R_MobileNo,Pha
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(getApplicationContext(),"Pharmacy Data Not Store "+e.toString(),Toast.LENGTH_SHORT).show();
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
             }
         });
 
