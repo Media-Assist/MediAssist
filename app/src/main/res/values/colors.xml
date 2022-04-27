@@ -8,8 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="btncolor">#3F51B5</color>
-    <color name="cardviewBG">#C2DBEF</color>
-
+    <color name="cardviewBG">#209CFF</color>
+    <color name="cardviewBG1">#C2DBEF</color>
 
     <color name = "colorPrimary">#008577</color>
     <color name = "colorPrimaryDark">#00574B</color>
@@ -21,4 +21,6 @@
     <color name="no_appointment">#004e92</color>
     <color name="skyBlue">#FF17A8EC</color>
 
-</resources>
+    <color name="MainColor">#EAC9A1</color>
+
+    <color name="Main1">#edd7bc</color></resources>

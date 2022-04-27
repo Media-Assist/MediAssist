@@ -30,6 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_border"
                 android:layout_marginBottom="30dp">
 
         <TextView
@@ -83,6 +85,7 @@
             android:background="@drawable/button_background"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
+            android:layout_marginBottom="30dp"
             android:onClick="detailPrescription"></Button>
 
     </LinearLayout>

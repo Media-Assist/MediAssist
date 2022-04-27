@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Pharmacy_Registration"
     android:orientation="vertical"
-    android:background="@color/cardviewBG">
+    android:background="@color/cardviewBG"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,11 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            app:cardCornerRadius="20dp">
+            app:cardCornerRadius="20dp"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_border">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="9922457834"
+            android:maxLength="10"
             android:inputType="number"
             android:layout_margin="20dp"></EditText>
 
@@ -185,6 +190,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     app:hintTextColor="@color/black"
+                    android:layout_margin="10dp"
                     app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/Pharma_R_Password"
@@ -208,6 +214,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:layout_margin="10dp"
                     app:hintTextColor="@color/black"
                     app:passwordToggleEnabled="true">
         <EditText

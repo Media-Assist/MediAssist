@@ -8,7 +8,8 @@
     android:focusableInTouchMode="true"
     android:layout_margin="15dp"
     android:orientation="vertical"
-    tools:context= ".Specialization.SpecializationFrag">
+    tools:context= ".Specialization.SpecializationFrag"
+    android:background="@color/cardviewBG">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/search_by_specialization"
